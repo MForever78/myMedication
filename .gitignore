@@ -1,0 +1,8 @@
+# ignore packages installed by node
+node_modules
+
+# ignore OSX swap file
+.DS_STORE
+
+# ignore vim swap file
+*.swap
