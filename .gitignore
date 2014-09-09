@@ -6,3 +6,6 @@ node_modules
 
 # ignore vim swap file
 *.swp
+
+# ignore credentials file
+credentials.js
