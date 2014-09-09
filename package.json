@@ -3,6 +3,10 @@
   "version": "0.0.0",
   "description": "A medical website",
   "main": "topology.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/MForever78/topology.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,6 +20,8 @@
   },
   "devDependencies": {
     "chai": "^1.9.1",
+    "gulp": "^3.8.8",
+    "gulp-load-plugins": "^0.6.0",
     "mocha": "^1.21.4"
   }
 }
