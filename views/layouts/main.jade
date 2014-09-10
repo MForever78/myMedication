@@ -10,7 +10,8 @@ html
         if showTest
             link(rel = "stylesheet", href = "/vendor/mocha.css")
         // stylesheets
-        link(rel = "stylesheet", href = "/css/main.css")
+        link(rel = "stylesheet", href = "/css/bootstrap.min.css")
+        link(rel = "stylesheet", href = "/css/main.min.css")
         // jQuery (For some certain reason, jQuery must be loaded before <body>)
         script(src = "/js/jQuery.min.js")
     
@@ -27,4 +28,5 @@ html
             if pageTestScript
                 script(src = "#{pageTestScript}")
             script mocha.run();
-        script(src = "/js/main.js")
+        script(src = "/js/bootstrap.min.js")
+        script(src = "/js/main.min.js")
