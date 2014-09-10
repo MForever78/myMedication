@@ -5,13 +5,14 @@ var patientsSchema = mongoose.Schema({
   username: String,
   salt: String,
   password: String,
-  reminder: String,
+  reminders: [String],
   drug: [String],
   info: String,
   year: Number,
   month: Number,
   day: Number,
   gender: String,
+  img: String,
 });
 
 var Patients = mongoose.model('Patients', patientsSchema);
