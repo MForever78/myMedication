@@ -6,7 +6,7 @@ var patientsSchema = mongoose.Schema({
   salt: String,
   password: String,
   reminders: [String],
-  drug: [String],
+  drugs: [String],
   info: String,
   year: Number,
   month: Number,
