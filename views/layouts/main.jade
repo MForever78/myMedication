@@ -13,7 +13,7 @@ html
         link(rel = "stylesheet", href = "/css/bootstrap.min.css")
         link(rel = "stylesheet", href = "/css/main.min.css")
         // jQuery (For some certain reason, jQuery must be loaded before <body>)
-        script(src = "/js/jQuery.min.js")
+        script(src = "/js/jQuery-2.1.1.min.js")
     
     body
         block body
@@ -21,7 +21,7 @@ html
             #mocha
             script(src = "/vendor/mocha.js")
             script(src = "/vendor/chai.js")
-            script
+            script.
                 mocha.ui("tdd");
                 var assert = chai.assert;
             script(src = "/qa/tests-global.js")

@@ -1,6 +1,6 @@
 var Express = require("express");
 var jade = require('jade');
-var controller = require('./controllers/index');
+var controllers = require('./controllers/index');
 var credentials = require('./credentials');
 
 var app = Express();
@@ -13,7 +13,7 @@ app.set('view engine', 'jade');
 app.set('port', process.env.PORT || 3000);
 
 // set static directory
-app.use(express.static(__dirname + '/public'));
+app.use(Express.static(__dirname + '/public'));
 
 // catch tests
 app.use(function(req, res, next) {
