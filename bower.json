@@ -1,0 +1,21 @@
+{
+  "name": "topology",
+  "main": "topology.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/MForever78/topology",
+  "authors": [
+    "MForever78 <shunjian1128@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public/components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jQuery": "~2.1.1",
+    "bootstrap": "~3.2.0"
+  }
+}

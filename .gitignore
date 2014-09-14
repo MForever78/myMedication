@@ -9,3 +9,6 @@ node_modules
 
 # ignore credentials file
 credentials.js
+
+# ignore Bower components
+public/components
