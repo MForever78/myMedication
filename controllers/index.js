@@ -9,8 +9,9 @@ module.exports = function(app) {
 
   // page
   app.get('/', page.index);
-  app.get('/login', page.login);
-  //app.get('/home', page.home);
+  app.get('/userlogin', page.userlogin);
+  app.get('/adminlogin', page.adminlogin);
+  app.get('/admin', page.admin);
   //app.get('/about', page.about);
 
 };

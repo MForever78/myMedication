@@ -1,0 +1,30 @@
+extends ./layouts/main
+
+block body
+    .container
+        .row
+            .col-lg-4.login-brand
+                a(href = '/')
+                    img(src = 'img/brand.png')
+        h3 Sign in
+        .row
+            .col-lg-6.login-box
+                .col-lg-6
+                    form(role = 'form', method = 'post')
+                        .form-group
+                            label(for = 'username') Username
+                            input.form-control#username(type = 'username')
+                        .form-group
+                            label(for = 'password') Password
+                            input.form-control#password(type = 'password')
+                        .checkbox
+                            label
+                                input(type = 'checkbox')
+                                span Remember me
+                        button.btn.btn-default(type = 'submit') Sign in
+                .col-lg-6
+                    a(href = '/admin')
+                        Or Sign in as a system administrator
+        .row
+            p.
+                Not a member? <a href="#">Sign up now</a>
