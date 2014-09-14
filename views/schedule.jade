@@ -1,0 +1,109 @@
+extends ./layouts/main
+
+block body
+    nav.navbar.navbar-inverse.navbar-fixed-top(role = 'navigation')
+        .container-fluid
+            .navbar-header
+                .navbar-brand
+                    a(href = '/')
+                        img(src = '/img/brand.png')
+            .collapse.navbar-collapse#user-navbar
+                ul.nav.navbar-nav.navbar-right
+                    li
+                        a(href = '/admin')
+                            img(src = '/img/lexis.png')
+                            span Lexis
+
+    .row
+        .col-lg-3
+            p Hi, Lexis
+        .col-lg-9
+            ol.breadcrumb
+                li
+                    a(href = '#') User
+                li
+                    a(href = '#') My Schedule
+
+    .container
+        .row
+            .col-lg-3
+                ul.nav.nav-pills.nav-stacked
+                    li.active
+                        a(href = '#') My Medicine Schedule
+                    li
+                        a(href = '/user/appraisal') My Appraisal
+                    li
+                        a(href = '/user/refill_prescription') Refill Prescription
+                    li
+                        a(href = '/user/feedback') Feedback
+                    li
+                        a(href = '/user/personal_center') Personal Center
+            .col-lg-9
+                h3 My Medication Schedule
+                table.table.table-striped
+                    thead
+                        tr
+                            th Drug Name
+                            th Times a day
+                            th Taking time
+                            th Unit
+                            th Surplus
+                            th Operate
+                    tbody
+                        tr
+                            td Diltiazem
+                            td 6(2 / 3 time)
+                            td After Meals
+                            td Miligram
+                            td 30
+                            td
+                                a(href = '#') Delete
+                        tr
+                            td Verapamil
+                            td 6(2 / 3 time)
+                            td Before Meals
+                            td Miligram
+                            td 30
+                            td
+                                a(href = '#') Delete
+                        tr
+                            td Hydrochlorothiazide
+                            td 6(2 / 3 time)
+                            td After Meals
+                            td Miligram
+                            td 30
+                            td
+                                a(href = '#') Delete
+                        tr
+                            td Propranolol
+                            td 6(2 / 3 time)
+                            td Before Meals
+                            td Miligram
+                            td 30
+                            td
+                                a(href = '#') Delete
+                        tr
+                            td Atenolol
+                            td 6(2 / 3 time)
+                            td After Meals
+                            td Miligram
+                            td 30
+                            td
+                                a(href = '#') Delete
+                        tr
+                            td Diltiazem
+                            td 6(2 / 3 time)
+                            td After Meals
+                            td Miligram
+                            td 30
+                            td
+                                a(href = '#') Delete
+                        tr
+                            td Verapamil
+                            td 6(2 / 3 time)
+                            td After Meals
+                            td Miligram
+                            td 30
+                            td
+                                a(href = '#') Delete
+
