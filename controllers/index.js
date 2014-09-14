@@ -7,8 +7,9 @@ module.exports = function(app) {
   // app.post('/login', user.login);
   // app.get('/logout', user.logout);
 
-  // index
+  // page
   app.get('/', page.index);
+  app.get('/login', page.login);
   //app.get('/home', page.home);
   //app.get('/about', page.about);
 
