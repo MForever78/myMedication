@@ -12,8 +12,13 @@ module.exports = {
     res.render('adminlogin', {pageTitle: 'Administrator Login - Topology'});
   },
 
-  admin: function(req, res, next) {
-    res.render('admin', {pageTitle: 'Administrator - Topology'});
+  admin: {
+      statistic: function(req, res, next) {
+        res.render('statistic', {pageTitle: 'Administrator - Topology'});
+      },
+      medicineinfo: function(req, res, next) {
+        res.render('medicineinfo', {pageTitle: 'Medicine Information - Topology'});
+      }
   }
 
 }
