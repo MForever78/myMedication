@@ -1,57 +1,72 @@
 var gulp = require('gulp');
-var autoprefixer = require('gulp-autoprefixer');
-var cache = require('gulp-cache');
-var concat = require('gulp-concat');
-var imagemin = require('gulp-imagemin');
-var jshint = require('gulp-jshint');
-var less = requrie('gulp-less');
-var livereload = require('gulp-livereload');
-var minifycss = require('gulp-minify-css');
-var notify = require('gulp-notify');
-var rename = require('gulp-rename');
-var uglify = require('gulp-uglify');
+var gulpLoadPlugins = require('gulp-load-plugins');
+var plugins = gulpLoadPlugins();
+var del = require('del');
+var mainBowerFiles = require('main-bower-files');
+
+gulp.task('bower', function() {
+  return gulp.src(mainBowerFiles(), { base: 'assets/components' })
+    .pipe(gulp.dest('./public/lib'))
+    .pipe(plugins.notify({ message: 'bower task complete' }));
+});
+
+gulp.task('bootstrap:preparation', ['bower'], function() {
+  return gulp.src('./assets/sass/bootstrap/variables.scss')
+    .pipe(gulp.dest('./public/lib/twbs-boostrap-sass/assets/stylesheets/bootstrap/_variables.scss'))
+    .pipe(plugins.notify({ message: 'bootstrap preparation complete' }));
+});
+
+gulp.task('bootstrap', ['bootstrap:preparation'], function() {
+  return gulp.src('./public/lib/twbs-bootstrap-sass/assets/stylesheets/_bootstrap.scss')
+    .pipe(sass())
+    .pipe(gulp.dest('./public/css'))
+    .pipe(plugins.rename({ suffix: '.min' }))
+    .pipe(plugins.minify-css())
+    .pipe(gulp.dest('./public/css'))
+    .pipe(plugins.notify({ message: 'Bootstrap task complete' }))
+});
 
 gulp.task('styles', function() {
-  return gulp.src('./assets/less/main.less')
-    .pipe(less())
-    .pipe(autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
+  return gulp.src('./assets/sass/main.scss')
+    .pipe(plugins.sass())
+    .pipe(plugins.autoprefixer('last 2 version', 'safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
     .pipe(gulp.dest('./public/css'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(minifycss())
+    .pipe(plugins.rename({ suffix: '.min' }))
+    .pipe(plugins.minify-css())
     .pipe(gulp.dest('./public/css'))
-    .pipe(notify({ message: 'Styles task complete' }));
+    .pipe(plugins.notify({ message: 'Styles task complete' }));
 });
 
 gulp.task('scripts', function() {
   return gulp.src('./assets/js/**/*.js')
-    .pipe(jshint('.jshintrc'))
-    .pipe(jshint.reporter('default'))
-    .pipe(concat('main.js'))
+    .pipe(plugins.jshint())
+    .pipe(plugins.jshint.reporter('default'))
+    .pipe(plugins.concat('main.js'))
     .pipe(gulp.dest('./public/js'))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(uglify())
+    .pipe(plugins.rename({ suffix: '.min' }))
+    .pipe(plugins.uglify())
     .pipe(gulp.dest('./public/js'))
-    .pipe(notify({ message: 'Scripts task complete' }));
+    .pipe(plugins.notify({ message: 'Scripts task complete' }));
 });
 
 gulp.task('images', function() {
   return gulp.src('./assets/img/**/*')
-    .pipe(cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
+    .pipe(plugins.cache(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true })))
     .pipe(gulp.dest('./public/img'))
-    .pipe(notify({ message: 'Images task complete' }));
+    .pipe(plugins.notify({ message: 'Images task complete' }));
 });
 
 gulp.task('clean', function(cb) {
-  del(['./public/css', './public/js', './public/img'], cb);
+  del(['./public/css', './public/js', './public/img', './public/lib'], cb);
 });
 
 gulp.task('default', ['clean'], function() {
-  gulp.start('styles', 'scripts', 'images');
+  gulp.start('bootstrap', 'styles', 'scripts', 'images');
 });
 
 gulp.task('watch', function() {
-  //Watch .less files
-  gulp.watch('./assets/less/**/*.less', ['styles']);
+  //Watch .sass files
+  gulp.watch('./assets/sass/**/*.scss', ['styles']);
 
   //Watch .js files
   gulp.watch('./assets/js/**/*.js', ['scripts']);
@@ -60,8 +75,8 @@ gulp.task('watch', function() {
   gulp.watch('./assets/img/**/*', ['images']);
 
   //Create LiveReloaded server
-  livereload.listen();
+  plugins.livereload.listen();
 
   //Watch any files in assets/, reload on change
-  gulp.watch(['./public/**']).on('change', livereload.changed);
+  gulp.watch(['./public/**']).on('change', plugins.livereload.changed);
 });

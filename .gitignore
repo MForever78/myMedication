@@ -11,4 +11,4 @@ node_modules
 credentials.js
 
 # ignore Bower components
-public/components
+assets/components

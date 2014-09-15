@@ -14,8 +14,18 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
+  "overrides": {
+    "twbs-bootstrap-sass": {
+      "main": [
+        "assets/javascripts/bootstrap.js",
+        "assets/fonts",
+        "assets/stylesheets/_bootstrap.scss",
+        "assets/stylesheets/bootstrap"
+      ]
+    }
+  },
+  "dependencies": {
     "jQuery": "~2.1.1",
-    "bootstrap": "~3.2.0"
+    "twbs-bootstrap-sass": "~3.2.0+2"
   }
 }
