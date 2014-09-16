@@ -4,12 +4,14 @@ module.exports = {
     res.render('index', {pageTitle: 'Topology'});
   },
 
-  userlogin: function(req, res, next) {
-    res.render('userlogin', {pageTitle: 'User Login - Topology'});
+  signin: {
+    user: function(req, res, next) {
+    res.render('usersignin', {pageTitle: 'User Sign in - Topology'});
   },
 
-  adminlogin: function(req, res, next) {
-    res.render('adminlogin', {pageTitle: 'Administrator Login - Topology'});
+    admin: function(req, res, next) {
+      res.render('adminsignin', {pageTitle: 'Administrator Sign in - Topology'});
+    }
   },
 
   admin: {
