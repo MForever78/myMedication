@@ -7,7 +7,7 @@ html
         meta(name = "description", content = "A medical website")
         meta(name = "viewport", content = "width=device-width, initial-scale=1")
         // Run tests
-        if showTest
+        if showTests
             link(rel = "stylesheet", href = "/vendor/mocha.css")
         // stylesheets
         link(rel = "stylesheet", href = "/styles/main.min.css")
@@ -16,7 +16,7 @@ html
     
     body
         block body
-        if showTest
+        if showTests
             #mocha
             script(src = "/vendor/mocha.js")
             script(src = "/vendor/chai.js")
