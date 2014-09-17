@@ -6,11 +6,11 @@ module.exports = {
 
   signin: {
     user: function(req, res, next) {
-    res.render('usersignin', {pageTitle: 'User Sign in - Topology'});
+    res.render('userSignin', {pageTitle: 'User Sign in - Topology'});
   },
 
     admin: function(req, res, next) {
-      res.render('adminsignin', {pageTitle: 'Administrator Sign in - Topology'});
+      res.render('adminSignin', {pageTitle: 'Administrator Sign in - Topology'});
     }
   },
 
@@ -18,8 +18,8 @@ module.exports = {
     statistic: function(req, res, next) {
       res.render('statistic', {pageTitle: 'Administrator - Topology'});
     },
-    medicineinfo: function(req, res, next) {
-      res.render('medicineinfo', {pageTitle: 'Medicine Information - Topology'});
+    medicineInfo: function(req, res, next) {
+      res.render('medicineInfo', {pageTitle: 'Medicine Information - Topology'});
     }
   },
 
@@ -30,14 +30,14 @@ module.exports = {
     appraisal: function(req, res, next) {
       res.render('appraisal', {pageTitle: 'My Appraisal'});
     },
-    refill_prescription: function(req, res, next) {
-      res.render('refill_prescription', {pageTitle: 'Refill Prescription'});
+    refillPrescription: function(req, res, next) {
+      res.render('refillPrescription', {pageTitle: 'Refill Prescription'});
     },
     feedback: function(req, res, next) {
       res.render('feedback', {pageTitle: 'Feedback'});
     }, 
-    personal_center: function(req, res, next) {
-      res.render('personal_center', {pageTitle: 'Personal Center'});
+    personalCenter: function(req, res, next) {
+      res.render('personalCenter', {pageTitle: 'Personal Center'});
     }
   }
 

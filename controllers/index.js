@@ -11,15 +11,13 @@ module.exports = function(app) {
   app.get('/', page.index);
   app.get('/signin/user$', page.signin.user);
   app.get('/signin/admin$', page.signin.admin);
-  app.get('/admin/statistic', page.admin.statistic);
-  app.get('/admin/medicineinfo', page.admin.medicineinfo);
-  app.get('/admin$', page.admin.statistic);
-  app.get('/user/schedule', page.user.schedule);
-  app.get('/user/appraisal', page.user.appraisal);
-  app.get('/user/refill_prescription', page.user.refill_prescription);
-  app.get('/user/feedback', page.user.feedback);
-  app.get('/user/personal_center', page.user.personal_center);
-  app.get('/user$', page.user.schedule);
+  app.get('/statistic', page.admin.statistic);
+  app.get('/medicineinfo', page.admin.medicineInfo);
+  app.get('/schedule', page.user.schedule);
+  app.get('/appraisal', page.user.appraisal);
+  app.get('/refill_prescription', page.user.refillPrescription);
+  app.get('/feedback', page.user.feedback);
+  app.get('/personal_center', page.user.personalCenter);
   //app.get('/about', page.about);
 
 };
