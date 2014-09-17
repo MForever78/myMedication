@@ -38,6 +38,7 @@ gulp.task('images', function() {
 });
 
 gulp.task('clean', function(cb) {
+  plugins.cache.clearAll();
   del(['public/styles', 'public/scripts', 'public/img', 'public/libs'], cb);
 });
 
