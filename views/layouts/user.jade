@@ -1,0 +1,44 @@
+extends main
+
+block body
+    nav.navbar.navbar-inverse.navbar-fixed-top(role = 'navigation')
+        .container-fluid
+            .navbar-header
+                .navbar-brand
+                    a(href = '/')
+                        img(src = '/img/nav-brand.png')
+            .collapse.navbar-collapse#user-navbar
+                ul.nav.navbar-nav.navbar-right
+                    li
+                        a(href = '/schedule')
+                            img(src = '/img/lexis.png')
+                            span Lexis
+
+    .row
+        .col-lg-3
+            p Hi, Lexis
+        .col-lg-9
+            ol.breadcrumb
+                li
+                    a(href = '#') User
+                li
+                    a(href = '#') My Schedule
+
+    .container
+        .row
+            .col-lg-3
+                ul.nav.nav-pills.nav-stacked
+                    li.active
+                        a(href = '/schedule') My Medicine Schedule
+                    li
+                        a(href = '/appraisal') My Appraisal
+                    li
+                        a(href = '/refill_rescription') Refill Prescription
+                    li
+                        a(href = '/feedback') Feedback
+                    li
+                        a(href = '/personal_center') Personal Center
+            .col-lg-9
+                block content
+    
+    include ../includes/footer

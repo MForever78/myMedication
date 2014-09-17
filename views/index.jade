@@ -1,4 +1,4 @@
-extends ./layouts/main.jade
+extends layouts/main.jade
 
 block body
     nav.navbar.navbar-inverse.navbar-fixed-top(role = 'navigation')
@@ -6,7 +6,7 @@ block body
             .navbar-header
                 .navbar-brand
                     a(href = '/')
-                        img(src = 'img/brand.png')
+                        img(src = '/img/nav-brand.png')
             .collapse.navbar-collapse#main-navbar
                 ul.nav.navbar-nav.navbar-right
                     li.active
@@ -21,10 +21,10 @@ block body
     .jumbotron
         .row
             .col-lg-2.pull-right
-                a(href = '/userlogin')
-                    img(src = 'img/index-user.png', href = '/userlogin')
-                a(href = 'adminlogin')
-                    img(src = 'img/index-doctor.png', href = '/adminlogin')
+                a(href = '/signin/user')
+                    img(src = 'img/index-user.png')
+                a(href = '/signin/admin')
+                    img(src = 'img/index-doctor.png')
         .main-title
             h1 Medication Management
             h1 Information System
@@ -36,62 +36,6 @@ block body
                         input.form-control#searchBox(type = 'text', placeholder = 'Search by medicine name or condition...')
                         span.glyphicon.glyphicon-search.form-control-feedback
                 button.btn.btn-default Search
-
-    .container
-        .row
-            .col-lg-6
-                .row
-                    img(src = "img/index-gray_brand.png")
-                .row
-                    img(src = 'img/facebook.png')
-                    img(src = 'img/twitter.png')
-                    img(src = 'img/googleplus.png')
-                .row
-                    footer
-                        p.
-                            Copyright 2009-2014 Corrimal. Designed by Lexis
-            .col-lg-2
-                h3 Company
-                ul
-                    li
-                        a(href = '#') About
-                    li
-                        a(href = '#') Help
-                    li
-                        a(href = '#') Contact
-                    li
-                        a(href = '#') Terms
-                    li
-                        a(href = '#') Privacy
-                    li
-                        a(href = '#') Shop
-            .col-lg-2
-                h3 Community
-                ul
-                    li
-                        a(href = '#') Blog
-                    li
-                        a(href = '#') Meetups
-                    li
-                        a(href = '#') Newsletter
-                    li
-                        a(href = '#') Testimonials
-                    li
-                        a(href = '#') Handbook
-                    li
-                        a(href = '#') Brand Guidelines
-            .col-lg-2
-                h3 Connect
-                ul
-                    li
-                        a(href = '#') Find Doctors
-                    li
-                        a(href = '#') Jobs for Doctors
-                    li
-                        a(href = '#') Go Pro
-                    li
-                        a(href = '#') Teams
-                    li
-                        a(href = '#') Advertise
-                    li
-                        a(href = '#') API
+    
+    include includes/footer
+    

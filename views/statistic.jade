@@ -1,65 +1,31 @@
-extends ./layouts/main
+extends layouts/admin
 
-block body
-    nav.navbar.navbar-inverse.navbar-fixed-top(role = 'navigation')
-        .container-fluid
-            .navbar-header
-                .navbar-brand
-                    a(href = '/')
-                        img(src = '/img/brand.png')
-            .collapse.navbar-collapse#user-navbar
-                ul.nav.navbar-nav.navbar-right
-                    li
-                        a(href = '/admin')
-                            img(src = '/img/admin.png')
-                            span Administrator
-
-    .row
-        .col-lg-3
-            p Hi, Administrator
-        .col-lg-9
-            ol.breadcrumb
-                li
-                    a(href = '#') User
-                li
-                    a(href = '#') Personal Center
-
-    .container
+block content
+    h3 Statistic
+    h4 Hot Search Medicine
+    .well
         .row
-            .col-lg-3
-                ul.nav.nav-pills.nav-stacked
-                    li.active
-                        a(href = '#') Statistic
-                    li
-                        a(href = '/admin/medicineinfo') Medicine Infomation
-                    li
-                        a(href = '#') Questions
-            .col-lg-9
-                h3 Statistic
-                h4 Hot Search Medicine
-                .well
-                    .row
-                        .col-lg-6
-                            p Diltiazem
-                            .progress
-                                .progress-bar.progress-bar-danger.progress-bar-striped(role = 'progressbar', aria-valuenow = '83', aria-valuemin = '0', aria-valuemax = '100', style = 'width: 83%')
-                                    | 83%
-                            p Verapamil
-                            .progress
-                                .progress-bar.progress-bar-danger.progress-bar-striped(role = 'progressbar', aria-valuenow = '30', aria-valuemin = '0', aria-valuemax = '100', style = 'width: 60%')
-                                    | 30%
-                            p Hydrochlorothiazide
-                            .progress
-                                .progress-bar.progress-bar-danger.progress-bar-striped(role = 'progressbar', aria-valuenow = '30', aria-valuemin = '0', aria-valuemax = '100', style = 'width: 60%')
-                                    | 30%
-                        .col-lg-6
-                            p Propranolol
-                            .progress
-                                .progress-bar.progress-bar-danger.progress-bar-striped(role = 'progressbar', aria-valuenow = '83', aria-valuemin = '0', aria-valuemax = '100', style = 'width: 83%')
-                                    | 83%
-                            p Atenolol
-                            .progress
-                                .progress-bar.progress-bar-danger.progress-bar-striped(role = 'progressbar', aria-valuenow = '60', aria-valuemin = '0', aria-valuemax = '100', style = 'width: 60%')
-                                    | 60%
-                           
+            .col-lg-6
+                p Diltiazem
+                .progress
+                    .progress-bar.progress-bar-danger.progress-bar-striped(role = 'progressbar', aria-valuenow = '83', aria-valuemin = '0', aria-valuemax = '100', style = 'width: 83%')
+                        | 83%
+                p Verapamil
+                .progress
+                    .progress-bar.progress-bar-danger.progress-bar-striped(role = 'progressbar', aria-valuenow = '30', aria-valuemin = '0', aria-valuemax = '100', style = 'width: 60%')
+                        | 30%
+                p Hydrochlorothiazide
+                .progress
+                    .progress-bar.progress-bar-danger.progress-bar-striped(role = 'progressbar', aria-valuenow = '30', aria-valuemin = '0', aria-valuemax = '100', style = 'width: 60%')
+                        | 30%
+            .col-lg-6
+                p Propranolol
+                .progress
+                    .progress-bar.progress-bar-danger.progress-bar-striped(role = 'progressbar', aria-valuenow = '83', aria-valuemin = '0', aria-valuemax = '100', style = 'width: 83%')
+                        | 83%
+                p Atenolol
+                .progress
+                    .progress-bar.progress-bar-danger.progress-bar-striped(role = 'progressbar', aria-valuenow = '60', aria-valuemin = '0', aria-valuemax = '100', style = 'width: 60%')
+                        | 60%
+               
 

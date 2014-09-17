@@ -1,93 +1,59 @@
-extends ./layouts/main
+extends layouts/admin
 
-block body
-    nav.navbar.navbar-inverse.navbar-fixed-top(role = 'navigation')
-        .container-fluid
-            .navbar-header
-                .navbar-brand
-                    a(href = '/')
-                        img(src = '/img/brand.png')
-            .collapse.navbar-collapse#user-navbar
-                ul.nav.navbar-nav.navbar-right
-                    li
-                        a(href = '/admin')
-                            img(src = '/img/admin.png')
-                            span Administrator
-
-    .row
-        .col-lg-3
-            p Hi, Administrator
-        .col-lg-9
-            ol.breadcrumb
-                li
-                    a(href = '#') User
-                li
-                    a(href = '#') Personal Center
-
-    .container
-        .row
-            .col-lg-3
-                ul.nav.nav-pills.nav-stacked
-                    li
-                        a(href = '/admin/statistic') Statistic
-                    li.active
-                        a(href = '/admin/medicineinfo') Medicine Infomation
-                    li
-                        a(href = '#') Questions
-            .col-lg-9
-                h3 Medicine Infomation
-                table.table.table-striped
-                    thead
-                        tr
-                            th Drug Name
-                            th Update Time
-                            th Operate
-                    tbody
-                        tr
-                            td Diltiazem
-                            td 2012.05.01 13:05
-                            td 
-                                a(href = '#') Edit 
-                                a(href = '#') Delete
-                        tr
-                            td Verapamil
-                            td 2012.05.01 13:05
-                            td 
-                                a(href = '#') Edit 
-                                a(href = '#') Delete
-                        tr
-                            td Propranolol
-                            td 2012.05.01 13:05
-                            td 
-                                a(href = '#') Edit 
-                                a(href = '#') Delete
-                        tr
-                            td Atenolol
-                            td 2012.05.01 13:05
-                            td 
-                                a(href = '#') Edit 
-                                a(href = '#') Delete
-                        tr
-                            td Diltiazem
-                            td 2012.05.01 13:05
-                            td 
-                                a(href = '#') Edit 
-                                a(href = '#') Delete
-                        tr
-                            td Propranolol
-                            td 2012.05.01 13:05
-                            td 
-                                a(href = '#') Edit 
-                                a(href = '#') Delete
-                        tr
-                            td Verapamil
-                            td 2012.05.01 13:05
-                            td 
-                                a(href = '#') Edit 
-                                a(href = '#') Delete
-                        tr
-                            td Atenolol
-                            td 2012.05.01 13:05
-                            td 
-                                a(href = '#') Edit 
-                                a(href = '#') Delete
+block content
+    h3 Medicine Infomation
+    table.table.table-striped
+        thead
+            tr
+                th Drug Name
+                th Update Time
+                th Operate
+        tbody
+            tr
+                td Diltiazem
+                td 2012.05.01 13:05
+                td 
+                    a(href = '#') Edit 
+                    a(href = '#') Delete
+            tr
+                td Verapamil
+                td 2012.05.01 13:05
+                td 
+                    a(href = '#') Edit 
+                    a(href = '#') Delete
+            tr
+                td Propranolol
+                td 2012.05.01 13:05
+                td 
+                    a(href = '#') Edit 
+                    a(href = '#') Delete
+            tr
+                td Atenolol
+                td 2012.05.01 13:05
+                td 
+                    a(href = '#') Edit 
+                    a(href = '#') Delete
+            tr
+                td Diltiazem
+                td 2012.05.01 13:05
+                td 
+                    a(href = '#') Edit 
+                    a(href = '#') Delete
+            tr
+                td Propranolol
+                td 2012.05.01 13:05
+                td 
+                    a(href = '#') Edit 
+                    a(href = '#') Delete
+            tr
+                td Verapamil
+                td 2012.05.01 13:05
+                td 
+                    a(href = '#') Edit 
+                    a(href = '#') Delete
+            tr
+                td Atenolol
+                td 2012.05.01 13:05
+                td 
+                    a(href = '#') Edit 
+                    a(href = '#') Delete
