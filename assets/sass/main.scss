@@ -3,11 +3,18 @@
 
 // Navbar
 
-.nav-logo {
-    width: 290px;
-    height: $navbar-height;
-    display: block;
-    background: url(/img/nav-brand.png) no-repeat center;
+nav {
+    .nav-logo {
+        width: 290px;
+        height: $navbar-height;
+        display: block;
+        background: url(/img/nav-brand.png) no-repeat center;
+    }
+    
+    ul.nav {
+        font-family: Cambria;
+        text-transform: uppercase;
+    }
 }
 
 // Index
