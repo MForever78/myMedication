@@ -2,15 +2,13 @@ extends layouts/main.jade
 
 block body
     nav.navbar.navbar-inverse.navbar-fixed-top(role = 'navigation')
-        .container-fluid
+        .container
             .navbar-header
-                .navbar-brand
-                    a(href = '/')
-                        img(src = '/img/nav-brand.png')
+                a.index-logo
             .collapse.navbar-collapse#main-navbar
                 ul.nav.navbar-nav.navbar-right
                     li.active
-                        a(href = '#') Home
+                        a(href = '/') Home
                     li
                         a(href = 'about') About
                     li

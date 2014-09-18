@@ -1,2 +1,16 @@
 @import "customVar";
 @import "libs/bootstrap";
+
+// Navbar
+.navbar-inverse {
+    background-color: rgba(51, 51, 51, 0.8);
+}
+
+.index-logo {
+    width: 290px;
+    height: $navbar-height;
+    display: block;
+    background: url(/img/nav-brand.png) no-repeat center;
+}
+
+
