@@ -4,36 +4,37 @@ block body
     nav.navbar.navbar-inverse.navbar-fixed-top(role = 'navigation')
         .container
             .navbar-header
-                a.index-logo
-            .collapse.navbar-collapse#main-navbar
+                a.nav-logo(href = '/')
+            .collapse.navbar-collapse
                 ul.nav.navbar-nav.navbar-right
                     li.active
                         a(href = '/') Home
                     li
-                        a(href = 'about') About
+                        a(href = '/about') About
                     li
-                        a(href = 'contact') Contact
+                        a(href = '/contact') Contact
                     li
-                        a(href = 'categories') Categories
+                        a(href = '/categories') Categories
                    
-    .jumbotron
-        .row
-            .col-lg-2.pull-right
-                a(href = '/signin/user')
-                    img(src = 'img/index-user.png')
-                a(href = '/signin/admin')
-                    img(src = 'img/index-doctor.png')
-        .main-title
-            h1 Medication Management
-            h1 Information System
-        .row
-            .col-lg-8
-                form(role = 'form')
-                    .form-group.has-feedback
-                        label.sr-only(for = 'searchBox') Search box
-                        input.form-control#searchBox(type = 'text', placeholder = 'Search by medicine name or condition...')
-                        span.glyphicon.glyphicon-search.form-control-feedback
-                button.btn.btn-default Search
+    .jumbotron#index-jumbotron
+        .container#index-banner
+            .row
+                .col-lg-2.pull-right
+                    a(href = '/signin/user')
+                        img(src = 'img/index-user.png')
+                    a(href = '/signin/admin')
+                        img(src = 'img/index-doctor.png')
+            .main-title
+                h1.strong Medication Management
+                h1 Information System
+            .row
+                .col-lg-8
+                    form(role = 'form')
+                        .form-group.has-feedback
+                            label.sr-only(for = 'searchBox') Search box
+                            input.form-control#searchBox(type = 'text', placeholder = 'Search by medicine name or condition...')
+                            span.glyphicon.glyphicon-search.form-control-feedback
+                    button.btn.btn-default Search
     
     include includes/footer
     
