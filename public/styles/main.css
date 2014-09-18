@@ -4545,12 +4545,10 @@ button.close {
 #index-jumbotron {
   background: url(/img/index-background.jpg) no-repeat center; }
 
-/*
 #index-banner {
-    padding-top: $navbar-height; 
-
+  padding-top: 90px;
+  /*
     .main-title {
-        font-family: 
+        font-family:
     }
-}
-*/
+*/ }
