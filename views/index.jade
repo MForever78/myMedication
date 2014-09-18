@@ -20,21 +20,21 @@ block body
         .container#index-banner
             .row
                 .col-lg-2.pull-right
-                    a(href = '/signin/user')
+                    a.signin(href = '/signin/user')
                         img(src = 'img/index-user.png')
-                    a(href = '/signin/admin')
+                    a.signin(href = '/signin/admin')
                         img(src = 'img/index-doctor.png')
             .main-title
-                h1.strong Medication Management
-                h1 Information System
-            .row
-                .col-lg-8
-                    form(role = 'form')
-                        .form-group.has-feedback
-                            label.sr-only(for = 'searchBox') Search box
-                            input.form-control#searchBox(type = 'text', placeholder = 'Search by medicine name or condition...')
-                            span.glyphicon.glyphicon-search.form-control-feedback
-                    button.btn.btn-default Search
+                .titleWrap
+                    h1.strong Medication Management
+                    h1 Information System
+            #index-search
+                form.form-inline(role = 'form')
+                    .form-group.has-feedback
+                        label.sr-only(for = 'searchBox') Search box
+                        input.form-control#searchBox(type = 'text', placeholder = 'Search by medicine name or condition...')
+                        span.glyphicon.glyphicon-search.form-control-feedback
+                    button.btn.btn-primary Search
     
     include includes/footer
     
