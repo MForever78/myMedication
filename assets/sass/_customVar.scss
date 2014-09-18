@@ -1,6 +1,23 @@
 //** Custom icon font path
 $icon-font-path:            "/fonts/";
 
+//** Custom web font
+@font-face {
+    font-family: 'Nexa Light';
+    src:    url('/fonts/Nexa-Light.eot');
+    src:    url('/fonts/Nexa-Light.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/Nexa-Light.woff') format('woff'),
+            url('/fonts/Nexa-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Nexa Bold';
+    src:    url('/fonts/Nexa-Bold.eot');
+    src:    url('/fonts/Nexa-Bold.eot?#iefix') format('embedded-opentype'),
+            url('/fonts/Nexa-Bold.woff') format('woff'),
+            url('/fonts/Nexa-Bold.ttd') format('truetype');
+}
+
 //** Navbar
 // Size
 $navbar-height:             90px;

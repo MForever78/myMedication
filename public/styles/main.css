@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Nexa Light';
+  src: url('/fonts/Nexa-Light.eot');
+  src: url('/fonts/Nexa-Light.eot?#iefix') format('embedded-opentype'), url('/fonts/Nexa-Light.woff') format('woff'), url('/fonts/Nexa-Light.ttf') format('truetype'); }
+
+@font-face {
+  font-family: 'Nexa Bold';
+  src: url('/fonts/Nexa-Bold.eot');
+  src: url('/fonts/Nexa-Bold.eot?#iefix') format('embedded-opentype'), url('/fonts/Nexa-Bold.woff') format('woff'), url('/fonts/Nexa-Bold.ttd') format('truetype'); }
+
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif;
@@ -4562,14 +4572,20 @@ button.close {
           -ms-transform: translate(-50%, -50%);
               transform: translate(-50%, -50%); }
     #index-banner .main-title h1 {
-      font-size: 35px; }
+      font-size: 35px;
+      font-family: 'Nexa Light';
+      margin: 0 auto; }
+      #index-banner .main-title h1.strong {
+        font-family: 'Nexa Bold'; }
   #index-banner #index-search {
     text-align: center; }
     #index-banner #index-search form .form-control {
       width: 600px;
       height: 40px; }
     #index-banner #index-search form .form-control-feedback {
-      line-height: 40px; }
+      line-height: 40px;
+      font-size: 25px;
+      color: #d6d6d6; }
     #index-banner #index-search form .btn {
       margin: 0 0 0 10px; }
     #index-banner #index-search form .btn-primary {
