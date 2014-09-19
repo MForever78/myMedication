@@ -77,3 +77,27 @@ nav {
         }
     }
 }
+
+// Footer
+
+footer {
+    padding-bottom: 85px;
+    line-height: 1.8;
+    font-size: 14px;
+    color: #333;
+    a {
+        color: #333;
+    }
+    h3 {
+        font-size: 14px;
+    }
+    .footer-content {
+        margin: 20px 0;
+    }
+    .social {
+        margin: 0 10px 0 0;
+    }
+    .copy {
+        color:#777;
+    }
+}

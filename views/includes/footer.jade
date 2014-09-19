@@ -1,18 +1,21 @@
 footer.container
     .row
         .col-lg-6
-            .row
+            .footer-content
                 img(src = "/img/footer-brand.png")
-            .row
-                img(src = '/img/footer-facebook.png')
-                img(src = '/img/footer-twitter.png')
-                img(src = '/img/footer-google+.png')
-            .row
+            .footer-content
+                a.social(href = '#')
+                    img(src = '/img/footer-facebook.png', href = '#')
+                a.social(href = '#') 
+                    img(src = '/img/footer-twitter.png', href = '#')
+                a.social(href = '#')
+                    img(src = '/img/footer-google+.png', href = '#')
+            .footer-content.copy
                 p.
-                    Copyright 2009-2014 Corrimal. Designed by Lexis
+                    Copyright 2009-2014 Corrimal. Designed by Lexis.
         .col-lg-2
             h3 Company
-            ul
+            ul.list-unstyled
                 li
                     a(href = '#') About
                 li
@@ -27,7 +30,7 @@ footer.container
                     a(href = '#') Shop
         .col-lg-2
             h3 Community
-            ul
+            ul.list-unstyled
                 li
                     a(href = '#') Blog
                 li
@@ -42,7 +45,7 @@ footer.container
                     a(href = '#') Brand Guidelines
         .col-lg-2
             h3 Connect
-            ul
+            ul.list-unstyled
                 li
                     a(href = '#') Find Doctors
                 li

@@ -4596,3 +4596,19 @@ nav ul.nav {
       height: 40px;
       background-color: #59C2E6;
       border-width: 0; }
+
+footer {
+  padding-bottom: 85px;
+  line-height: 1.8;
+  font-size: 14px;
+  color: #333; }
+  footer a {
+    color: #333; }
+  footer h3 {
+    font-size: 14px; }
+  footer .footer-content {
+    margin: 20px 0; }
+  footer .social {
+    margin: 0 10px 0 0; }
+  footer .copy {
+    color: #777; }
