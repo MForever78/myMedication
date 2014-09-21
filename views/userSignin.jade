@@ -1,29 +1,29 @@
 extends ./layouts/main
 
 block body
-    #signin
-        .container
-            .signin-logo
-                a(href = '/')
-                    img(src = '/img/signin-logo.png')
-            h3.text-center Sign in
-            .row
-                .col-lg-offset-3.col-lg-3.signin-box
-                    form(role = 'form', method = 'post')
-                        .form-group
-                            label.signin-note(for = 'username') Username
-                            input.form-control#username(type = 'username')
-                        .form-group
-                            label.signin-note(for = 'password') Password
-                            input.form-control#password(type = 'password')
-                        .checkbox
-                            label
-                                input(type = 'checkbox')
-                                span Remember me
-                        button.btn.btn-primary(type = 'submit') Sign in
-                .col-lg-3.signin-changeRole
-                    p.signin-note.text-center
-                        | OR Sign in as a system administrator
-                    button.center-block.btn.btn-default(href = '/signin/admin') Sign in
-            .signin-signup.text-center
-                | Not a member? <a href="#">Sign up now</a>
+    .container
+        .signin-logo
+            a(href = '/')
+                img(src = '/img/signin-logo.png')
+        h3.text-center Sign in
+        .row.userWrap
+            .col-lg-offset-3.col-lg-3.signin-box
+                form(role = 'form', method = 'post')
+                    .form-group
+                        label.signin-note(for = 'username') Username
+                        input.form-control#username(type = 'username')
+                    .form-group
+                        label.signin-note(for = 'password') Password
+                        input.form-control#password(type = 'password')
+                    .checkbox
+                        label
+                            input(type = 'checkbox')
+                            span Remember me
+                    button.btn.btn-primary(type = 'submit') Sign in
+            .col-lg-3.signin-changeRole
+                p.signin-note.text-center
+                    | OR Sign in as a system administrator
+                form(action = '/signin/admin')
+                    button.center-block.btn.btn-default(type = 'submit') Sign in
+        .signin-signup.text-center
+            | Not a member? <a href="#">Sign up now</a>

@@ -4623,17 +4623,28 @@ footer {
     padding: 100px 0 50px 0; }
   #signin h3 {
     font-family: "Myriad Pro", inherit;
-    font-size: 26px; }
+    font-size: 26px;
+    margin-bottom: 30px; }
+  #signin .userWrap {
+    background: url(/img/signin-user-background.png) no-repeat;
+    background-position: center;
+    min-height: 228px; }
+  #signin .adminWrap {
+    background: url(/img/signin-admin-background.png) no-repeat;
+    background-position: center;
+    min-height: 228px; }
   #signin .signin-box {
     padding-right: 40px;
     border-right: 1px solid rgba(0, 0, 0, 0.1); }
   #signin .btn {
     width: 110px;
-    height: 40px; }
+    height: 40px;
+    text-transform: uppercase;
+    font-family: 'Cambria', inherit; }
   #signin .signin-changeRole {
     padding-left: 40px; }
   #signin .signin-note {
     color: #AAB2BD;
     font-weight: normal; }
   #signin .signin-signup {
-    margin-top: 50px; }
+    margin: 50px auto; }

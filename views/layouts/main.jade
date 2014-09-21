@@ -30,7 +30,7 @@ html
         // jQuery (For some certain reason, jQuery must be loaded before <body>)
         script(src = "/libs/jquery.min.js")
     
-    body
+    body(id = bodyId)
         block body
         if showTests
             #mocha
