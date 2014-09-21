@@ -6,11 +6,11 @@ module.exports = {
 
   signin: {
     user: function(req, res, next) {
-    res.render('userSignin', {pageTitle: 'User Sign in - Topology'});
+    res.render('userSignin', {pageTitle: 'User Sign in - Topology', bodyId: 'signin'});
   },
 
     admin: function(req, res, next) {
-      res.render('adminSignin', {pageTitle: 'Administrator Sign in - Topology'});
+      res.render('adminSignin', {pageTitle: 'Administrator Sign in - Topology', bodyId: 'signin'});
     }
   },
 
