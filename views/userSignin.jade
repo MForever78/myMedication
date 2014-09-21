@@ -1,30 +1,29 @@
 extends ./layouts/main
 
 block body
-    .container.signin-page
-        .row
-            .col-lg-4.login-brand
+    #signin
+        .container
+            .signin-logo
                 a(href = '/')
-                    img(src = '/img/nav-brand.png')
-        h3 Sign in
-        .row
-            .col-lg-6.login-box
-                .col-lg-6
+                    img(src = '/img/signin-logo.png')
+            h3.text-center Sign in
+            .row
+                .col-lg-offset-3.col-lg-3.signin-box
                     form(role = 'form', method = 'post')
                         .form-group
-                            label(for = 'username') Username
+                            label.signin-note(for = 'username') Username
                             input.form-control#username(type = 'username')
                         .form-group
-                            label(for = 'password') Password
+                            label.signin-note(for = 'password') Password
                             input.form-control#password(type = 'password')
                         .checkbox
                             label
                                 input(type = 'checkbox')
                                 span Remember me
-                        button.btn.btn-default(type = 'submit') Sign in
-                .col-lg-6
-                    a(href = '/signin/admin')
-                        Or Sign in as a system administrator
-        .row
-            p.
-                Not a member? <a href="#">Sign up now</a>
+                        button.btn.btn-primary(type = 'submit') Sign in
+                .col-lg-3.signin-changeRole
+                    p.signin-note.text-center
+                        | OR Sign in as a system administrator
+                    button.center-block.btn.btn-default(href = '/signin/admin') Sign in
+            .signin-signup.text-center
+                | Not a member? <a href="#">Sign up now</a>

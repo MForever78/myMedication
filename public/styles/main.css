@@ -2160,7 +2160,7 @@ textarea.input-lg, .form-horizontal .form-group-lg textarea.form-control, .input
     outline: 5px auto -webkit-focus-ring-color;
     outline-offset: -2px; }
   .btn:hover, .btn:focus {
-    color: #333;
+    color: #fff;
     text-decoration: none; }
   .btn:active, .btn.active {
     outline: 0;
@@ -2174,37 +2174,37 @@ textarea.input-lg, .form-horizontal .form-group-lg textarea.form-control, .input
     box-shadow: none; }
 
 .btn-default {
-  color: #333;
-  background-color: #fff;
+  color: #fff;
+  background-color: #999;
   border-color: #ccc; }
   .btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
-    color: #333;
-    background-color: #e6e6e6;
+    color: #fff;
+    background-color: #808080;
     border-color: #adadad; }
   .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle {
     background-image: none; }
   .btn-default.disabled, .btn-default.disabled:hover, .btn-default.disabled:focus, .btn-default.disabled:active, .btn-default.disabled.active, .btn-default[disabled], .btn-default[disabled]:hover, .btn-default[disabled]:focus, .btn-default[disabled]:active, .btn-default[disabled].active, fieldset[disabled] .btn-default, fieldset[disabled] .btn-default:hover, fieldset[disabled] .btn-default:focus, fieldset[disabled] .btn-default:active, fieldset[disabled] .btn-default.active {
-    background-color: #fff;
+    background-color: #999;
     border-color: #ccc; }
   .btn-default .badge {
-    color: #fff;
-    background-color: #333; }
+    color: #999;
+    background-color: #fff; }
 
 .btn-primary {
   color: #fff;
-  background-color: #428bca;
-  border-color: #3580bd; }
+  background-color: #59c2e6;
+  border-color: #43bbe3; }
   .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #3073a9;
-    border-color: #28608e; }
+    background-color: #2db3df;
+    border-color: #1e9fca; }
   .btn-primary:active, .btn-primary.active, .open > .btn-primary.dropdown-toggle {
     background-image: none; }
   .btn-primary.disabled, .btn-primary.disabled:hover, .btn-primary.disabled:focus, .btn-primary.disabled:active, .btn-primary.disabled.active, .btn-primary[disabled], .btn-primary[disabled]:hover, .btn-primary[disabled]:focus, .btn-primary[disabled]:active, .btn-primary[disabled].active, fieldset[disabled] .btn-primary, fieldset[disabled] .btn-primary:hover, fieldset[disabled] .btn-primary:focus, fieldset[disabled] .btn-primary:active, fieldset[disabled] .btn-primary.active {
-    background-color: #428bca;
-    border-color: #3580bd; }
+    background-color: #59c2e6;
+    border-color: #43bbe3; }
   .btn-primary .badge {
-    color: #428bca;
+    color: #59c2e6;
     background-color: #fff; }
 
 .btn-success {
@@ -4546,6 +4546,9 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+.btn-primary, .btn-default {
+  border-width: 0; }
+
 nav .nav-logo {
   width: 290px;
   height: 90px;
@@ -4590,12 +4593,9 @@ nav ul.nav {
       font-size: 25px;
       color: #d6d6d6; }
     #index-banner #index-search form .btn {
-      margin: 0 0 0 10px; }
-    #index-banner #index-search form .btn-primary {
+      margin: 0 0 0 10px;
       width: 106px;
-      height: 40px;
-      background-color: #59C2E6;
-      border-width: 0; }
+      height: 40px; }
 
 footer {
   padding-bottom: 85px;
@@ -4613,5 +4613,27 @@ footer {
   footer .copy {
     color: #777; }
 
-.signin-page {
+#signin {
+  width: 100%;
+  font-family: "Arial", inherit;
   background-color: #F5F5F5; }
+  #signin .signin-logo {
+    width: 423px;
+    margin: 0 auto;
+    padding: 100px 0 50px 0; }
+  #signin h3 {
+    font-family: "Myriad Pro", inherit;
+    font-size: 26px; }
+  #signin .signin-box {
+    padding-right: 40px;
+    border-right: 1px solid rgba(0, 0, 0, 0.1); }
+  #signin .btn {
+    width: 110px;
+    height: 40px; }
+  #signin .signin-changeRole {
+    padding-left: 40px; }
+  #signin .signin-note {
+    color: #AAB2BD;
+    font-weight: normal; }
+  #signin .signin-signup {
+    margin-top: 50px; }
