@@ -1,0 +1,13 @@
+extends layouts/main
+
+block body
+    .container
+        .row
+            .col-xs-offset-2.col-xs-4
+                h1 404!
+                p Page not found! Don't worry,
+                p sometimes it happens :)
+                form(method = 'get', action = '/')
+                    button.btn.btn-success.block-center(type = 'submit') to the main page
+            .col-xs-4
+                img(src = '/img/404.png')

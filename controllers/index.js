@@ -20,4 +20,17 @@ module.exports = function(app) {
   app.get('/personal_center', page.user.personalCenter);
   //app.get('/about', page.about);
 
+  // 404 handler
+  app.use(function(req, res, next) {
+    res.status(404);
+    res.render('404', { pageTitle: 'Not Found - My Medication', bodyId: 'notFound'});
+  });
+
+  // 500 handler
+  app.use(function(err, req, res, next) {
+    console.err(err.stack);
+    res.status(500);
+    res.render('500', {pageTitle: 'Error - My Medication', bodyId: 'error'});
+  });
+
 };
