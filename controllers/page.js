@@ -1,25 +1,25 @@
 module.exports = {
   
   index: function(req, res, next) {
-    res.render('index', {pageTitle: 'Topology'});
+    res.render('index', {pageTitle: 'My Medication'});
   },
 
   signin: {
     user: function(req, res, next) {
-    res.render('userSignin', {pageTitle: 'User Sign in - Topology', bodyId: 'signin'});
+    res.render('userSignin', {pageTitle: 'User Sign in - My Medication', bodyId: 'signin'});
   },
 
     admin: function(req, res, next) {
-      res.render('adminSignin', {pageTitle: 'Administrator Sign in - Topology', bodyId: 'signin'});
+      res.render('adminSignin', {pageTitle: 'Administrator Sign in - My Medication', bodyId: 'signin'});
     }
   },
 
   admin: {
     statistic: function(req, res, next) {
-      res.render('statistic', {pageTitle: 'Administrator - Topology'});
+      res.render('statistic', {pageTitle: 'Administrator - My Medication'});
     },
     medicineInfo: function(req, res, next) {
-      res.render('medicineInfo', {pageTitle: 'Medicine Information - Topology'});
+      res.render('medicineInfo', {pageTitle: 'Medicine Information - My Medication'});
     }
   },
 
