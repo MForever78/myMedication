@@ -2,7 +2,7 @@
 @import "libs/bootstrap";
 
 // Button
-.btn-primary, .btn-default {
+.btn-primary, .btn-default, .btn-success {
     border-width: 0;
 }
 
@@ -106,7 +106,6 @@ footer {
 // Sign in page
 
 #signin {
-    width: 100%;
     font-family: "Arial", inherit;
     background-color: #F5F5F5;
     
@@ -157,5 +156,27 @@ footer {
 
     .signin-signup {
         margin: 50px auto;
+    }
+}
+
+#notFound {
+    background-color: #F5F5F5;
+    padding: 150px 0;
+    font-family: 'Arial', inherit;
+    font-size: 18px;
+    line-height: 30px;
+    color: #575958;
+
+    h1 {
+        font-family: 'Georgia', inherit;
+        font-size: 110px;
+        margin-bottom: 60px;
+    }
+
+    .btn {
+        width: 200px;
+        height: 50px;
+        text-transform: uppercase;
+        margin: 100px 0;
     }
 }

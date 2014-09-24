@@ -2209,19 +2209,19 @@ textarea.input-lg, .form-horizontal .form-group-lg textarea.form-control, .input
 
 .btn-success {
   color: #fff;
-  background-color: #5cb85c;
-  border-color: #4eae4c; }
+  background-color: #78C937;
+  border-color: #6db531; }
   .btn-success:hover, .btn-success:focus, .btn-success:active, .btn-success.active, .open > .btn-success.dropdown-toggle {
     color: #fff;
-    background-color: #469d44;
-    border-color: #3b8439; }
+    background-color: #61a12c;
+    border-color: #518524; }
   .btn-success:active, .btn-success.active, .open > .btn-success.dropdown-toggle {
     background-image: none; }
   .btn-success.disabled, .btn-success.disabled:hover, .btn-success.disabled:focus, .btn-success.disabled:active, .btn-success.disabled.active, .btn-success[disabled], .btn-success[disabled]:hover, .btn-success[disabled]:focus, .btn-success[disabled]:active, .btn-success[disabled].active, fieldset[disabled] .btn-success, fieldset[disabled] .btn-success:hover, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success:active, fieldset[disabled] .btn-success.active {
-    background-color: #5cb85c;
-    border-color: #4eae4c; }
+    background-color: #78C937;
+    border-color: #6db531; }
   .btn-success .badge {
-    color: #5cb85c;
+    color: #78C937;
     background-color: #fff; }
 
 .btn-info {
@@ -4546,7 +4546,7 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
-.btn-primary, .btn-default {
+.btn-primary, .btn-default, .btn-success {
   border-width: 0; }
 
 nav .nav-logo {
@@ -4614,7 +4614,6 @@ footer {
     color: #777; }
 
 #signin {
-  width: 100%;
   font-family: "Arial", inherit;
   background-color: #F5F5F5; }
   #signin .signin-logo {
@@ -4648,3 +4647,20 @@ footer {
     font-weight: normal; }
   #signin .signin-signup {
     margin: 50px auto; }
+
+#notFound {
+  background-color: #F5F5F5;
+  padding: 150px 0;
+  font-family: 'Arial', inherit;
+  font-size: 18px;
+  line-height: 30px;
+  color: #575958; }
+  #notFound h1 {
+    font-family: 'Georgia', inherit;
+    font-size: 110px;
+    margin-bottom: 60px; }
+  #notFound .btn {
+    width: 200px;
+    height: 50px;
+    text-transform: uppercase;
+    margin: 100px 0; }
