@@ -3,12 +3,14 @@ extends layouts/main
 block body
     .container
         .row
-            .col-xs-6
+            .col-xs-offset-2.col-xs-4
                 h1 500!
                 h3 Sorry...
                 h3 It's not you.
                 h3 It's us.
                 p We are experiencing an Internal server problem.
                 p Please try again later :)
-            .col-xs-6
+                form(method = 'get', action = '/')
+                    button.btn.btn-success(type = 'submit') to the main page
+            .col-xs-4
                 img(src = '/img/500.png')

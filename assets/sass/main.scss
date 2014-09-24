@@ -159,12 +159,11 @@ footer {
     }
 }
 
-#notFound {
+#error {
     background-color: #F5F5F5;
     padding: 150px 0;
     font-family: 'Arial', inherit;
     font-size: 18px;
-    line-height: 30px;
     color: #575958;
 
     h1 {
@@ -173,10 +172,13 @@ footer {
         margin-bottom: 60px;
     }
 
+    h3, p {
+        margin: 0 0 10px 0;
+    }
     .btn {
         width: 200px;
         height: 50px;
         text-transform: uppercase;
-        margin: 100px 0;
+        margin: 60px 0;
     }
 }

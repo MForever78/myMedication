@@ -18,12 +18,16 @@ module.exports = function(app) {
   app.get('/refill_prescription', page.user.refillPrescription);
   app.get('/feedback', page.user.feedback);
   app.get('/personal_center', page.user.personalCenter);
+  // Test 500
+  app.get('/500', function(req, res, next) {
+    res.render('500', { pageTitle: 'Error - My Medication', bodyId: 'error' });
+  });
   //app.get('/about', page.about);
 
   // 404 handler
   app.use(function(req, res, next) {
     res.status(404);
-    res.render('404', { pageTitle: 'Not Found - My Medication', bodyId: 'notFound'});
+    res.render('404', { pageTitle: 'Not Found - My Medication', bodyId: 'error'});
   });
 
   // 500 handler
