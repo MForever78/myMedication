@@ -23,6 +23,10 @@ module.exports = {
     }
   },
 
+  signup: function(req, res, next) {
+    res.render('signup', {pageTitle: 'Sign up - My Medication', bodyId: 'signup'});
+  },
+
   user: {
     schedule: function(req, res, next) {
       res.render('schedule', {pageTitle: 'My Medication Schedule'});

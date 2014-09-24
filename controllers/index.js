@@ -11,6 +11,7 @@ module.exports = function(app) {
   app.get('/', page.index);
   app.get('/signin/user$', page.signin.user);
   app.get('/signin/admin$', page.signin.admin);
+  app.get('/signup$', page.signup);
   app.get('/statistic', page.admin.statistic);
   app.get('/medicineinfo', page.admin.medicineInfo);
   app.get('/schedule', page.user.schedule);
