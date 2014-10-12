@@ -2,6 +2,15 @@ var user = require('./user');
 var signup = require('./signup');
 var page = require('./page');
 
+function restrict(req, res, next) {
+  if (req.session.user) {
+    next();
+  } else {
+    req.session.error = 'Access denied!';
+    res.redirect('/userSignin');
+  }
+};
+
 module.exports = function(app) {
   
   // user related
@@ -13,14 +22,15 @@ module.exports = function(app) {
   app.get('/signin/user$', page.signin.user);
   app.get('/signin/admin$', page.signin.admin);
   app.get('/signup$', page.signup);
-  app.get('/statistic', page.admin.statistic);
-  app.get('/medicineinfo', page.admin.medicineInfo);
-  app.get('/schedule', page.user.schedule);
-  app.get('/appraisal', page.user.appraisal);
-  app.get('/refill_prescription', page.user.refillPrescription);
-  app.get('/feedback', page.user.feedback);
-  app.get('/personal_center', page.user.personalCenter);
+  app.get('/statistic', restrict, page.admin.statistic);
+  app.get('/medicineinfo', restrict, page.admin.medicineInfo);
+  app.get('/schedule', restrict, page.user.schedule);
+  app.get('/appraisal', restrict, page.user.appraisal);
+  app.get('/refill_prescription', restrict, page.user.refillPrescription);
+  app.get('/feedback', restrict, page.user.feedback);
+  app.get('/personal_center', restrict, page.user.personalCenter);
   app.post('/signup$', signup);
+  app.post('/signin/user', user.authPatient);
   // Test 500
   app.get('/500', function(req, res, next) {
     res.render('500', { pageTitle: 'Error - My Medication', bodyId: 'error' });

@@ -27,3 +27,4 @@ var createNewPatient = function(req, res, next) {
 };
 
 module.exports = createNewPatient;
+

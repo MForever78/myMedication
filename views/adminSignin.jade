@@ -8,7 +8,7 @@ block body
         h3.text-center Sign in
         .row.adminWrap
             .col-xs-offset-3.col-xs-3.signin-box
-                form(role = 'form', method = 'post')
+                form(role = 'form', method = 'post', action = '/adminSignin')
                     .form-group
                         label.signin-note(for = 'username') Username
                         input.form-control#username(type = 'username')
