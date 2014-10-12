@@ -12,3 +12,6 @@ credentials.js
 
 # ignore Bower components
 assets/components
+
+# ignore database files
+database

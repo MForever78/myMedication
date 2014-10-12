@@ -2,15 +2,12 @@ var mongoose = require('mongoose');
 
 var patientsSchema = mongoose.Schema({
   name: String,
-  username: String,
-  salt: String,
-  password: String,
+  username: { type: String, trim: true, required: true },
+  salt: { type: String, required: true },
+  password: { type: String, required: true },
   reminders: [String],
   drugs: [String],
   info: String,
-  year: Number,
-  month: Number,
-  day: Number,
   gender: String,
   img: String,
 });

@@ -1,4 +1,5 @@
 var user = require('./user');
+var signup = require('./signup');
 var page = require('./page');
 
 module.exports = function(app) {
@@ -19,6 +20,7 @@ module.exports = function(app) {
   app.get('/refill_prescription', page.user.refillPrescription);
   app.get('/feedback', page.user.feedback);
   app.get('/personal_center', page.user.personalCenter);
+  app.post('/signup$', signup);
   // Test 500
   app.get('/500', function(req, res, next) {
     res.render('500', { pageTitle: 'Error - My Medication', bodyId: 'error' });
@@ -33,7 +35,7 @@ module.exports = function(app) {
 
   // 500 handler
   app.use(function(err, req, res, next) {
-    console.err(err.stack);
+    console.log(err.stack);
     res.status(500);
     res.render('500', {pageTitle: 'Error - My Medication', bodyId: 'error'});
   });

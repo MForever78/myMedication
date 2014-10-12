@@ -8,13 +8,13 @@ block body
         form(role = 'form', method = 'post', action = '/signup')
             .form-group
                 label(for = 'username') Username
-                input#username.form-control(type = 'username')
+                input#username.form-control(type = 'username', name = 'username')
             .form-group
                 label(for = 'email') Email
-                input#email.form-control(type = 'email')
+                input#email.form-control(type = 'email', name = 'email')
             .form-group
                 label(for = 'password') Password
-                input#password.form-control(type = 'password')
+                input#password.form-control(type = 'password', name = 'password')
             .form-group
                 label(for = 'conform') Conform Password
                 input#conform.form-control(type = 'password')
