@@ -3,7 +3,7 @@ var signup = require('./signup');
 var page = require('./page');
 
 function restrict(req, res, next) {
-  if (req.session.user) {
+  if (req.session._id) {
     next();
   } else {
     req.session.error = 'Access denied!';
@@ -31,6 +31,7 @@ module.exports = function(app) {
   app.get('/personal_center', restrict, page.user.personalCenter);
   app.post('/signup$', signup);
   app.post('/signin/user', user.authPatient);
+  app.get('/logout', user.logout);
   // Test 500
   app.get('/500', function(req, res, next) {
     res.render('500', { pageTitle: 'Error - My Medication', bodyId: 'error' });

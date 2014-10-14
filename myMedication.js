@@ -4,6 +4,8 @@ var controllers = require('./controllers/index');
 var credentials = require('./credentials');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var connect = require('connect');
+var compression = require('compression');
 
 var app = Express();
 
@@ -34,6 +36,9 @@ switch(app.get('env')) {
     }));
     break;
 }
+
+// Compress response data
+app.use(compression());
 
 // connect database according to env
 // set `keepAlive` to prevent database connection errors for long-running
