@@ -1,7 +1,9 @@
 extends layouts/user
 
 block content
-    h3 My Appraisal
+    h3 
+        span.glyphicon.glyphicon-comment
+        |  My Appraisal
     table.table.table-striped
         thead
             tr
@@ -9,6 +11,7 @@ block content
                 th
                 th Time
                 th Operate
+        tbody
             tr
                 td
                     img(src = '/img/drug_demo.png')

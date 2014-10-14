@@ -3141,9 +3141,9 @@ tbody.collapse.in {
   .breadcrumb > li {
     display: inline-block; }
     .breadcrumb > li + li:before {
-      content: "/\00a0";
+      content: ">\00a0";
       padding: 0 5px;
-      color: #ccc; }
+      color: #333; }
   .breadcrumb > .active {
     color: #777777; }
 
@@ -4546,8 +4546,34 @@ button.close {
   .hidden-print {
     display: none !important; } }
 
+/* 
+    General class
+*/
+.noBottom {
+  margin-bottom: 0; }
+
 .btn-primary, .btn-default, .btn-success {
   border-width: 0; }
+
+.breadcrumb {
+  padding: 8px 0;
+  margin-bottom: 0;
+  background: transparent;
+  color: #333; }
+  .breadcrumb a {
+    color: #333; }
+
+.size32 {
+  height: 32px;
+  width: 32px; }
+
+.size80 {
+  height: 80px;
+  width: 80px; }
+
+.size64 {
+  height: 64px;
+  width: 64px; }
 
 nav .nav-logo {
   width: 290px;
@@ -4557,6 +4583,12 @@ nav .nav-logo {
 nav ul.nav {
   font-family: Cambria;
   text-transform: uppercase; }
+nav .navbar-nav > li > a {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  line-height: 64px; }
+nav img {
+  margin-right: 20px; }
 
 #index-jumbotron {
   height: 800px;
@@ -4640,6 +4672,8 @@ footer {
     height: 40px;
     text-transform: uppercase;
     font-family: 'Cambria', inherit; }
+  #signin .btn-wider {
+    width: 140px; }
   #signin .signin-changeRole {
     padding-left: 40px; }
   #signin .signin-note {
@@ -4665,3 +4699,115 @@ footer {
     height: 50px;
     text-transform: uppercase;
     margin: 60px 0; }
+
+#user {
+  padding-top: 90px; }
+  #user #content-wrap {
+    background: url(/img/signed-background.png); }
+  #user #breadcrumb-wrap {
+    background-color: #c9c9c9; }
+  #user .sayHi {
+    padding: 8px 0;
+    margin: 0; }
+  #user .nav-pills > li > a {
+    border-radius: 0;
+    color: #fff;
+    background-color: #5a5a5a; }
+  #user .userCenter {
+    min-height: 560px;
+    background-color: #fff;
+    margin-bottom: 115px; }
+  #user .welcomeWrapper {
+    min-height: 110px;
+    padding: 10px; }
+    #user .welcomeWrapper .userMenu {
+      line-height: 27px;
+      margin-left: 10px; }
+      #user .welcomeWrapper .userMenu a {
+        color: #000; }
+    #user .welcomeWrapper .welcomeMessage {
+      color: #777; }
+
+.addNewDrug {
+  background-color: #7d7f81;
+  width: 100%;
+  padding: 10px; }
+  .addNewDrug ul {
+    margin-bottom: 0; }
+  .addNewDrug li {
+    float: left;
+    margin-left: 45px;
+    line-height: 100%; }
+    .addNewDrug li a {
+      color: #fff; }
+
+.onoffswitch {
+  position: relative;
+  width: 60px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none; }
+
+.onoffswitch-checkbox {
+  display: none; }
+
+.onoffswitch-label {
+  display: block;
+  overflow: hidden;
+  cursor: pointer;
+  border: 0px solid #FFFFFF;
+  border-radius: 50px; }
+
+.onoffswitch-inner {
+  display: block;
+  width: 200%;
+  margin-left: -100%;
+  -webkit-transition: margin 0.3s ease-in 0s;
+  transition: margin 0.3s ease-in 0s; }
+
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+  display: block;
+  float: left;
+  width: 50%;
+  height: 20px;
+  padding: 0;
+  line-height: 20px;
+  font-size: 12px;
+  color: white;
+  font-family: Trebuchet, Arial, sans-serif;
+  font-weight: bold;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.onoffswitch-inner:before {
+  content: "ON";
+  padding-left: 10px;
+  background-color: #59C2E6;
+  color: #FFFFFF; }
+
+.onoffswitch-inner:after {
+  content: "OFF";
+  padding-right: 10px;
+  background-color: #999999;
+  color: #FFFFFF;
+  text-align: right; }
+
+.onoffswitch-switch {
+  display: block;
+  width: 11px;
+  margin: 4.5px;
+  background: #FFFFFF;
+  border: 2px solid #FFFFFF;
+  border-radius: 50px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 36px;
+  -webkit-transition: all 0.3s ease-in 0s;
+  transition: all 0.3s ease-in 0s; }
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+  margin-left: 0; }
+
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+  right: 0px; }

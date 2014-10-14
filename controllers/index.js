@@ -7,7 +7,7 @@ function restrict(req, res, next) {
     next();
   } else {
     req.session.error = 'Access denied!';
-    res.redirect('/userSignin');
+    res.redirect('/signin/user');
   }
 };
 

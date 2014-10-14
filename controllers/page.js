@@ -24,24 +24,24 @@ module.exports = {
   },
 
   signup: function(req, res, next) {
-    res.render('signup', {pageTitle: 'Sign up - My Medication', bodyId: 'signup'});
+    res.render('signup', {pageTitle: 'Sign up - My Medication', bodyId: 'signin'});
   },
 
   user: {
     schedule: function(req, res, next) {
-      res.render('schedule', {pageTitle: 'My Medication Schedule'});
+      res.render('schedule', {pageTitle: 'My Medication Schedule', bodyId: 'user'});
     },
     appraisal: function(req, res, next) {
-      res.render('appraisal', {pageTitle: 'My Appraisal'});
+      res.render('appraisal', {pageTitle: 'My Appraisal', bodyId: 'user'});
     },
     refillPrescription: function(req, res, next) {
-      res.render('refillPrescription', {pageTitle: 'Refill Prescription'});
+      res.render('refillPrescription', {pageTitle: 'Refill Prescription', bodyId: 'user'});
     },
     feedback: function(req, res, next) {
-      res.render('feedback', {pageTitle: 'Feedback'});
+      res.render('feedback', {pageTitle: 'Feedback', bodyId: 'user'});
     }, 
     personalCenter: function(req, res, next) {
-      res.render('personalCenter', {pageTitle: 'Personal Center'});
+      res.render('personalCenter', {pageTitle: 'Personal Center', bodyId: 'user'});
     }
   }
 

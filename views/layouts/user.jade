@@ -2,43 +2,67 @@ extends main
 
 block body
     nav.navbar.navbar-inverse.navbar-fixed-top(role = 'navigation')
-        .container-fluid
+        .container
             .navbar-header
-                .navbar-brand
-                    a(href = '/')
-                        img(src = '/img/nav-brand.png')
+                a.nav-logo(href = '/')
             .collapse.navbar-collapse#user-navbar
                 ul.nav.navbar-nav.navbar-right
                     li
                         a(href = '/schedule')
-                            img(src = '/img/lexis.png')
+                            img.size64(src = '/img/lexis.jpg')
                             span Lexis
 
-    .row
-        .col-xs-3
-            p Hi, Lexis
-        .col-xs-9
-            ol.breadcrumb
-                li
-                    a(href = '#') User
-                li
-                    a(href = '#') My Schedule
+    #breadcrumb-wrap.container-fluid
+        .container
+            .row
+                .col-xs-3
+                    .sayHi Hi, Lexis
+                .col-xs-9
+                    ol.breadcrumb
+                        li
+                            a(href = '#') User
+                        li
+                            a(href = '#') My Schedule
 
-    .container
-        .row
-            .col-xs-3
-                ul.nav.nav-pills.nav-stacked
-                    li.active
-                        a(href = '/schedule') My Medicine Schedule
-                    li
-                        a(href = '/appraisal') My Appraisal
-                    li
-                        a(href = '/refill_rescription') Refill Prescription
-                    li
-                        a(href = '/feedback') Feedback
-                    li
-                        a(href = '/personal_center') Personal Center
-            .col-xs-9
-                block content
+    #content-wrap.container-fluid
+        .container
+            .row
+                .col-xs-3
+                    .userCenter
+                        .welcomeWrapper
+                            .row
+                                .col-xs-4
+                                    img.size80(src = '/img/lexis.jpg')
+                                .col-xs-8
+                                    ul.userMenu.list-unstyled
+                                        li
+                                            a(href = '#') 
+                                                span.glyphicon.glyphicon-envelope
+                                                |  Messages
+                                        li
+                                            a(href = '#') 
+                                                span.glyphicon.glyphicon-cog
+                                                |  Settings
+                                        li
+                                            a(href = '#') 
+                                                span.glyphicon.glyphicon-log-out
+                                                |  Logout
+                            .row
+                                .col-xs-12
+                                    .welcomeMessage
+                                        | Welcome back!
+                        ul.nav.nav-pills.nav-stacked
+                            li.active
+                                a(href = '/schedule') My Medicine Schedule
+                            li
+                                a(href = '/appraisal') My Appraisal
+                            li
+                                a(href = '/refill_prescription') Refill Prescription
+                            li
+                                a(href = '/feedback') Feedback
+                            li
+                                a(href = '/personal_center') Personal Center
+                .col-xs-9
+                    block content
     
     include ../includes/footer

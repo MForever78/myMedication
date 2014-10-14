@@ -1,13 +1,49 @@
 @import "customVar";
 @import "libs/bootstrap";
 
+/* 
+    General class
+*/
+
+// Table
+.noBottom {
+    margin-bottom: 0;
+}
+
 // Button
 .btn-primary, .btn-default, .btn-success {
     border-width: 0;
 }
 
-// Navbar
+// Bread
+.breadcrumb {
+    padding: 8px 0;
+    margin-bottom: 0;
+    background: transparent;
+    color: #333;
+    
+    a {
+        color: #333;
+    }
+}
 
+// Image
+.size32 {
+    height: 32px;
+    width: 32px;
+}
+
+.size80 {
+    height: 80px;
+    width: 80px;
+}
+
+.size64 {
+    height: 64px;
+    width: 64px;
+}
+
+// Navbar
 nav {
     .nav-logo {
         width: 290px;
@@ -20,7 +56,18 @@ nav {
         font-family: Cambria;
         text-transform: uppercase;
     }
+
+    .navbar-nav > li > a {
+        padding-top: 13px;
+        padding-bottom: 13px;
+        line-height: 64px;
+    }
+
+    img {
+        margin-right: 20px;
+    }
 }
+
 
 // Index
 
@@ -145,6 +192,10 @@ footer {
         font-family: 'Cambria', inherit;
     }
 
+    .btn-wider {
+        width: 140px;
+    }
+
     .signin-changeRole {
         padding-left: 40px;
     }
@@ -181,4 +232,118 @@ footer {
         text-transform: uppercase;
         margin: 60px 0;
     }
+}
+
+#user {
+    padding-top: $navbar-height;
+
+    #content-wrap {
+        background: url(/img/signed-background.png);
+    }
+
+    #breadcrumb-wrap {
+        background-color: #c9c9c9;
+    }
+
+    .sayHi {
+        padding: 8px 0;
+        margin: 0;
+    }
+
+    .nav-pills > li > a {
+        border-radius: 0;
+        color: #fff;
+        background-color: #5a5a5a;
+    }
+
+    .userCenter {
+        min-height: 560px;
+        background-color: #fff;
+        margin-bottom: 115px;
+    }
+
+    .welcomeWrapper {
+        min-height: 110px;
+        padding: 10px;
+        
+        .userMenu {
+            line-height: 27px;
+            margin-left: 10px;
+            
+            a {
+                color: #000;
+            }
+        }
+
+        .welcomeMessage {
+            color: #777;
+        }
+    }
+}
+
+.addNewDrug {
+    background-color: #7d7f81;
+    width: 100%;
+    padding: 10px;
+
+    ul {
+        margin-bottom: 0;
+    }
+
+    li {
+        float: left;
+        margin-left: 45px;
+        line-height: 100%;
+        a {
+            color: #fff;
+        }
+    }
+}
+
+// Switch CSS
+.onoffswitch {
+    position: relative; width: 60px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 0px solid #FFFFFF; border-radius: 50px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    -moz-transition: margin 0.3s ease-in 0s; -webkit-transition: margin 0.3s ease-in 0s;
+    -o-transition: margin 0.3s ease-in 0s; transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 20px; padding: 0; line-height: 20px;
+    font-size: 12px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: #59C2E6; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: #999999; color: #FFFFFF;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 11px; margin: 4.5px;
+    background: #FFFFFF;
+    border: 2px solid #FFFFFF; border-radius: 50px;
+    position: absolute; top: 0; bottom: 0; right: 36px;
+    -moz-transition: all 0.3s ease-in 0s; -webkit-transition: all 0.3s ease-in 0s;
+    -o-transition: all 0.3s ease-in 0s; transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
 }
