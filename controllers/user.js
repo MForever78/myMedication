@@ -26,6 +26,6 @@ module.exports = {
         }
         console.log("User logged out!");
       });
-      res.redirect('/');
+      res.redirect(303, '/');
     }
 }

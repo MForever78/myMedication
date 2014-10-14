@@ -6,7 +6,11 @@ module.exports = {
 
   signin: {
     user: function(req, res, next) {
-    res.render('userSignin', {pageTitle: 'User Sign in - My Medication', bodyId: 'signin'});
+      if (req.session._id !== undefined) {
+        res.redirect('/schedule');
+      } else {
+        res.render('userSignin', {pageTitle: 'User Sign in - My Medication', bodyId: 'signin'});
+      }
   },
 
     admin: function(req, res, next) {
