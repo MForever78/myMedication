@@ -9,14 +9,14 @@ block body
                 ul.nav.navbar-nav.navbar-right
                     li
                         a(href = '/schedule')
-                            img.size64(src = '/img/lexis.jpg')
-                            span Lexis
+                            img.size64(src = patient.img)
+                            span #{patient.username}
 
     #breadcrumb-wrap.container-fluid
         .container
             .row
                 .col-xs-3
-                    .sayHi Hi, Lexis
+                    .sayHi Hi, #{patient.username}
                 .col-xs-9
                     ol.breadcrumb
                         li
@@ -32,7 +32,7 @@ block body
                         .welcomeWrapper
                             .row
                                 .col-xs-4
-                                    img.size80(src = '/img/lexis.jpg')
+                                    img.size80(src = patient.img)
                                 .col-xs-8
                                     ul.userMenu.list-unstyled
                                         li

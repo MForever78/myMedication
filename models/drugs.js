@@ -5,7 +5,7 @@ var drugsSchema = mongoose.Schema({
   description: String,
   sideEffects: [String],
   reviews: [String],
-  img: String,
+  img: { type: String, default: '/img/demo_drug.png' },
 });
 
 var Drugs = mongoose.model('Drugs', drugsSchema);

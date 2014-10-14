@@ -9,7 +9,7 @@ var patientsSchema = mongoose.Schema({
   drugs: [String],
   info: String,
   gender: String,
-  img: String,
+  img: { type: String, default: "/img/patient-avatar.png" },
 });
 
 var Patients = mongoose.model('Patients', patientsSchema);

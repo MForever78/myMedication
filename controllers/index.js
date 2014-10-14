@@ -24,11 +24,11 @@ module.exports = function(app) {
   app.get('/signup$', page.signup);
   app.get('/statistic', restrict, page.admin.statistic);
   app.get('/medicineinfo', restrict, page.admin.medicineInfo);
-  app.get('/schedule', restrict, page.user.schedule);
-  app.get('/appraisal', restrict, page.user.appraisal);
-  app.get('/refill_prescription', restrict, page.user.refillPrescription);
-  app.get('/feedback', restrict, page.user.feedback);
-  app.get('/personal_center', restrict, page.user.personalCenter);
+  app.get('/schedule', restrict, user.schedule);
+  app.get('/appraisal', restrict, user.appraisal);
+  app.get('/refill_prescription', restrict, user.refillPrescription);
+  app.get('/feedback', restrict, user.feedback);
+  app.get('/personal_center', restrict, user.personalCenter);
   app.post('/signup$', signup);
   app.post('/signin/user', user.authPatient);
   app.get('/logout', user.logout);

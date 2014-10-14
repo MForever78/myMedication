@@ -27,5 +27,30 @@ module.exports = {
         console.log("User logged out!");
       });
       res.redirect(303, '/');
+    },
+  
+    schedule: 
+      function(req, res, next) {
+        Patients.findById(req.session._id, function(err, patient) {
+          if (err) {
+            console.log(err);
+            return res.redirect('/signin/user');
+          }
+          console.log(patient);
+          res.render('schedule', {pageTitle: 'My Medication Schedule', bodyId: 'user', patient: patient});
+        });
+    },
+
+    appraisal: function(req, res, next) {
+      res.render('appraisal', {pageTitle: 'My Appraisal', bodyId: 'user'});
+    },
+    refillPrescription: function(req, res, next) {
+      res.render('refillPrescription', {pageTitle: 'Refill Prescription', bodyId: 'user'});
+    },
+    feedback: function(req, res, next) {
+      res.render('feedback', {pageTitle: 'Feedback', bodyId: 'user'});
+    }, 
+    personalCenter: function(req, res, next) {
+      res.render('personalCenter', {pageTitle: 'Personal Center', bodyId: 'user'});
     }
 }
