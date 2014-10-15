@@ -1,1 +1,3 @@
-// To be added
+$('#submitNewDrug').on('click', function() {
+  $('#newDrug').submit();
+});

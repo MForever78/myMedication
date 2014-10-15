@@ -8,27 +8,29 @@ block content
         thead
             tr
                 th Drug Name
-                th Times a day
                 th Taking time
                 th Unit
                 th Surplus
                 th Remind
                 th Operate
         tbody
-            tr
-                td Diltiazem
-                td 6(2 / 3 time)
-                td After Meals
-                td Miligram
-                td 30
-                td
-                    .onoffswitch
-                        input.onoffswitch-checkbox#switch(type = 'checkbox', name = 'switchFor', checked)
-                        label.onoffswitch-label(for = 'switch')
-                            span.onoffswitch-inner
-                            span.onoffswitch-switch
-                td
-                    a(href = '#') Delete
+            each drug in patient.drugs
+                tr
+                    td= drug.name
+                    td= drug.takingTime
+                    td= drug.unit
+                    td= drug.surplus
+                    td
+                        - if (drug.reminder == undefined)
+                            a(href = '#addNewReminder') Add reminder
+                        - else
+                            .onoffswitch
+                                input.onoffswitch-checkbox#switch(type = 'checkbox', name = 'switchFor', checked)
+                                label.onoffswitch-label(for = 'switch')
+                                    span.onoffswitch-inner
+                                    span.onoffswitch-switch
+                    td
+                        a(href = '#') Delete
     .addNewDrug.clearfix
         ul.list-unstyled.pull-right
             li
@@ -39,15 +41,32 @@ block content
                     |  Add a new drug
 
     #addNewDrug.modal.fade(tabindex = '-1', role = 'dialog', aria-labelledby = 'newDrugLabel', aria-hidden = 'true')
-        .modal-dialog
+        .modal-dialog.patient-modal
             .modal-content
                 .modal-header
                     button.close(type = 'button', data-dismiss = 'modal')
                         span(aria-hidden = 'true') &times;
                         span.sr-only Close
-                    h4#newDrugLabel.modal-title Add a new drug
+                    h4#newDrugLabel.modal-title.text-uppercase.text-center Add a new drug
                 .modal-body
+                    form#newDrug(role = 'form', method = 'post', action = '/addNewDrug')
+                        .form-group
+                            label(for = 'inputDrugName') Drug Name
+                            input#inputDrugName.form-control(type = 'text', name = 'drugName')
+                        .form-group
+                            label(for = 'selectTakingTime') Taking Time
+                            select#selectTakingTime.form-control(name = 'takingTime')
+                                option Before Meals
+                                option After Meals
+                        .form-group
+                            label(for = 'selectUnit') Unit
+                            select#selectUnit.form-control(name = 'unit')
+                                option Milligram
+                                option Gram
+                        .form-group
+                            label(for = 'inputSurplus') Surplus
+                            input#inputSurplus.form-control(type = 'text', name = 'surplus')
                 .modal-footer
                     button.btn.btn-default(type = 'button', data-dismiss = 'modal') Close
-                    button.btn.btn-primary(type = 'button') Save
+                    button#submitNewDrug.btn.btn-primary Save
 

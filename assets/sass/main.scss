@@ -54,7 +54,6 @@ nav {
     
     ul.nav {
         font-family: Cambria;
-        text-transform: uppercase;
     }
 
     .navbar-nav > li > a {
@@ -277,6 +276,19 @@ footer {
 
         .welcomeMessage {
             color: #777;
+        }
+    }
+
+    .patient-modal {
+        width: 355px;
+
+        .modal-content {
+            border-radius: 0;
+        }
+
+        .modal-header {
+            background-color: #7d7f81;
+            color: #fff;
         }
     }
 }

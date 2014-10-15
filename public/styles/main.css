@@ -4581,8 +4581,7 @@ nav .nav-logo {
   display: block;
   background: url(/img/nav-brand.png) no-repeat center; }
 nav ul.nav {
-  font-family: Cambria;
-  text-transform: uppercase; }
+  font-family: Cambria; }
 nav .navbar-nav > li > a {
   padding-top: 13px;
   padding-bottom: 13px;
@@ -4727,6 +4726,13 @@ footer {
         color: #000; }
     #user .welcomeWrapper .welcomeMessage {
       color: #777; }
+  #user .patient-modal {
+    width: 355px; }
+    #user .patient-modal .modal-content {
+      border-radius: 0; }
+    #user .patient-modal .modal-header {
+      background-color: #7d7f81;
+      color: #fff; }
 
 .addNewDrug {
   background-color: #7d7f81;
