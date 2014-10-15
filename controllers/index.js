@@ -31,7 +31,8 @@ module.exports = function(app) {
   app.get('/personal_center', restrict, user.personalCenter);
   app.post('/signup$', signup);
   app.post('/signin/user', user.authPatient);
-  app.post('/addNewDrug', user.addNewDrug);
+  app.post('/addNewDrugSchedule', user.addNewDrug);
+  app.post('/deleteDrugSchedule', user.deleteDrug);
   app.get('/logout', user.logout);
   // Test 500
   app.get('/500', function(req, res, next) {

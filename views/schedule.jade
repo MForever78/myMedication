@@ -30,7 +30,9 @@ block content
                                     span.onoffswitch-inner
                                     span.onoffswitch-switch
                     td
-                        a(href = '#') Delete
+                        form(method = 'post', action = '/deleteDrugSchedule')
+                            input(type = 'text', value = drug._id, name = '_id', style = 'display: none')
+                            input(type = 'submit', value = 'Delete')
     .addNewDrug.clearfix
         ul.list-unstyled.pull-right
             li
@@ -49,7 +51,7 @@ block content
                         span.sr-only Close
                     h4#newDrugLabel.modal-title.text-uppercase.text-center Add a new drug
                 .modal-body
-                    form#newDrug(role = 'form', method = 'post', action = '/addNewDrug')
+                    form#newDrug(role = 'form', method = 'post', action = '/addNewDrugSchedule')
                         .form-group
                             label(for = 'inputDrugName') Drug Name
                             input#inputDrugName.form-control(type = 'text', name = 'drugName')

@@ -54,12 +54,30 @@ module.exports = {
               }
             } 
           },
-        function(err, patient) {
-          console.log('Update succeed!');
-          console.log(patient);
-          res.redirect('/schedule');
-        });
+          function(err, patient) {
+            console.log('Update succeed!');
+            console.log(patient);
+            res.redirect('/schedule');
+          });
     },
+
+  deleteDrug:
+    function(req, res, next) {
+      Patients.findByIdAndUpdate(
+          req.session._id,
+          { $pull: {
+              'drugs': {
+                _id: req.body._id
+              }
+            }
+          },
+          function(err, patient) {
+            console.log('Delete succeed!');
+            console.log(patient);
+            res.redirect('/schedule');
+          });
+    },
+
 
   appraisal: function(req, res, next) {
     res.render('appraisal', {pageTitle: 'My Appraisal', bodyId: 'user'});
