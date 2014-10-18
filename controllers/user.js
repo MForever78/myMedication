@@ -26,7 +26,7 @@ module.exports = {
         }
         console.log("User logged out!");
       });
-      res.redirect(303, '/');
+      res.redirect('/');
     },
   
   schedule: 
@@ -78,6 +78,31 @@ module.exports = {
           });
     },
 
+  addNewReminder:
+    function(req, res, next) {
+      Patients.findOne({ _id: req.session._id }, function(err, patient) {
+
+        var newReminder = {
+          'added': true,
+          'takingTime': req.body.takingTime,
+          'dose': req.body.dose,
+          'duration': req.body.duration,
+          'date': new Date(req.body.date)
+        };
+
+        patient.drugs.id(req.body._id).reminder = newReminder;
+        patient.drugs.id(req.body._id).reminderSwitch = true;
+
+        patient.save(function(err) {
+          if (err) {
+            next(err);
+            res.redirect('/schedule');
+          }
+          console.log('Add reminder succeed!');
+          res.redirect('/schedule');
+        });
+      });
+    },
 
   appraisal: function(req, res, next) {
     res.render('appraisal', {pageTitle: 'My Appraisal', bodyId: 'user'});

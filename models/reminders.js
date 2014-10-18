@@ -1,11 +1,10 @@
 var mongoose = require('mongoose');
 
 var remindersSchema = mongoose.Schema({
-  drug: String,
-  takingTime: String,
-  unit: String,
-  surplus: Number,
-  switchStatus: Boolean,
+  takingTime: Number,
+  dose: Number,
+  date: Date,
+  duration: Number,
 });
 
 var Reminders = mongoose.model('Reminders', remindersSchema);

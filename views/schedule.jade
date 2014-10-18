@@ -14,19 +14,19 @@ block content
                 th Remind
                 th Operate
         tbody
-            each drug in patient.drugs
+            each drug, index in patient.drugs
                 tr
                     td= drug.name
                     td= drug.takingTime
                     td= drug.unit
                     td= drug.surplus
                     td
-                        - if (drug.reminder == undefined)
-                            a(href = '#addNewReminder') Add reminder
+                        - if (!drug.reminder.added)
+                            a.reminderAnchor(href = '#' + index, data-toggle = 'modal', data-target = '#' + index) Add reminder
                         - else
                             .onoffswitch
-                                input.onoffswitch-checkbox#switch(type = 'checkbox', name = 'switchFor', checked)
-                                label.onoffswitch-label(for = 'switch')
+                                input.onoffswitch-checkbox(id = 'switch' + drug._id, type = 'checkbox', checked = drug.reminderSwitch, name = 'switchFor' + drug._id)
+                                label.onoffswitch-label(for = 'switch' + drug._id)
                                     span.onoffswitch-inner
                                     span.onoffswitch-switch
                     td
@@ -67,8 +67,39 @@ block content
                                 option Gram
                         .form-group
                             label(for = 'inputSurplus') Surplus
-                            input#inputSurplus.form-control(type = 'text', name = 'surplus')
+                            input#inputSurplus.form-control(type = 'number', name = 'surplus')
                 .modal-footer
                     button.btn.btn-default(type = 'button', data-dismiss = 'modal') Close
                     button#submitNewDrug.btn.btn-primary Save
 
+    each drug, index in patient.drugs
+        .modal.fade(id = index, tabindex = '-2', role = 'dialog', aria-labelledby = 'newReminderLabel' + index, aria-hidden = 'true')
+            .modal-dialog.patient-modal
+                .modal-content
+                    .modal-header
+                        button.close(type = 'button', data-dismiss = 'modal')
+                            span(aria-hidden = 'true') &times;
+                            span.sr-only Close
+                        h4.modal-title.text-uppercase.text-center(id = 'newReminderLabel' + index) Add new reminder
+                    .modal-body
+                        form(id = 'newReminder' + index, role = 'form', method = 'post', action = '/addNewReminder')
+                            .form-group
+                                label Taking Time Per Day
+                                select.form-control(name = 'timesADay')
+                                    option 1
+                                    option 2
+                                    option 3
+                            .form-group
+                                label Dose
+                                input.form-control(type = 'number', name = 'dose')
+                            .form-group
+                                label Date started taking
+                                input.form-control(type = 'date', name = 'date')
+                            .form-group
+                                label Duration
+                                input.form-control(type = 'number', name = 'duration')
+                            .form-group
+                                input(name = '_id', style = 'display: none', value = drug._id, type = 'text')
+                    .modal-footer
+                        button.btn.btn-default(type = 'button', data-dismiss = 'modal') Close
+                        button.btn.btn-primary(type = 'button', name = 'addReminder') Save

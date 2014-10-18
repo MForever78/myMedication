@@ -33,6 +33,7 @@ module.exports = function(app) {
   app.post('/signin/user', user.authPatient);
   app.post('/addNewDrugSchedule', user.addNewDrug);
   app.post('/deleteDrugSchedule', user.deleteDrug);
+  app.post('/addNewReminder', user.addNewReminder);
   app.get('/logout', user.logout);
   // Test 500
   app.get('/500', function(req, res, next) {
