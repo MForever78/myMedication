@@ -25,6 +25,7 @@ module.exports = function(app) {
   app.get('/statistic', restrict, page.admin.statistic);
   app.get('/medicineinfo', restrict, page.admin.medicineInfo);
   app.get('/schedule', restrict, user.schedule);
+  app.get('/timetable', restrict, user.timetable);
   app.get('/appraisal', restrict, user.appraisal);
   app.get('/refill_prescription', restrict, user.refillPrescription);
   app.get('/feedback', restrict, user.feedback);

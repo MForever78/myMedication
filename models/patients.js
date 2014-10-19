@@ -7,7 +7,7 @@ var drugScheduleSchema = mongoose.Schema({
   surplus: Number,
   reminder: {
     added: { type: Boolean, default: false },
-    takingTime: String,
+    timesADay: Number,
     dose: Number,
     duration: Number,
     date: Date,

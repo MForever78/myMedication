@@ -84,7 +84,7 @@ module.exports = {
 
         var newReminder = {
           'added': true,
-          'takingTime': req.body.takingTime,
+          'timesADay': req.body.timesADay,
           'dose': req.body.dose,
           'duration': req.body.duration,
           'date': new Date(req.body.date)
@@ -103,6 +103,17 @@ module.exports = {
         });
       });
     },
+
+  timetable: function(req, res, next) {
+    Patients.findById(req.session._id, function(err, patient) {
+      if (err) {
+        console.log(err);
+        next(err);
+      }
+      console.log(patient.drugs);
+      res.render('timetable', { pageTitle: "My timetable", bodyId: 'user', patient: patient });
+    });
+  },
 
   appraisal: function(req, res, next) {
     res.render('appraisal', {pageTitle: 'My Appraisal', bodyId: 'user'});

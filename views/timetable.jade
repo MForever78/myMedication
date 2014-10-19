@@ -1,0 +1,49 @@
+
+extends layouts/user
+
+block content
+    h3 
+        span.glyphicon.glyphicon-calendar
+        |  My Medication Schedule
+    table.table.table-bordered.table-hover
+        - var take = { 'Morning': false, 'Noon': false, 'Evening': false };
+        - var days = 0;
+        each drug in patient.drugs
+            - if (drug.reminder.timesADay >= 1)
+                - take.Morning = true;
+            - if (drug.reminder.timesADay >= 2)
+                - take.Noon = true;
+            - if (drug.reminder.timesADay >= 3)
+                - take.Evening = true;
+        thead
+            tr
+                th
+                th Monday
+                th Tuesday
+                th Wednesday
+                th Thursday
+                th Friday
+                th Saturday
+                th Sunday
+        tbody
+            tr
+                th Morning
+                - for (i = 0; i < 7; i++)
+                    if take.Morning
+                        td.success Take Pill
+                    else
+                        td
+            tr
+                th Noon
+                - for (i = 0; i < 7; i++)
+                    if (take.Morning)
+                        td.success Take Pill
+                    else
+                        td
+            tr
+                th Evening
+                - for (i = 0; i < 7; i++)
+                    if (take.Morning)
+                        td.success Take Pill
+                    else
+                        td
