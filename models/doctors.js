@@ -2,9 +2,10 @@ var mongoose = require('mongoose');
 
 var doctorsSchema = mongoose.Schema({
   name: String,
-  username: String,
-  salt: String,
-  password: String,
+  username: { type: String, required: true },
+  salt: { type: String, required: true },
+  password: { type: String, required: true },
+  img: { type: String, default: '/img/admin-avatar.png' },
 });
 
 var Doctors = mongoose.model('Doctors', doctorsSchema);
