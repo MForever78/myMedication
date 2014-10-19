@@ -146,7 +146,7 @@ module.exports = {
       console.log(patient);
       res.render('feedback', {pageTitle: 'Feedback', bodyId: 'user', patient: patient});
     });
-  }, 
+  },       
 
   personalCenter: function(req, res, next) {
     Patients.findById(req.session._id, function(err, patient) {

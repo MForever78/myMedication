@@ -18,15 +18,6 @@ module.exports = {
     }
   },
 
-  admin: {
-    statistic: function(req, res, next) {
-      res.render('statistic', {pageTitle: 'Administrator - My Medication'});
-    },
-    medicineInfo: function(req, res, next) {
-      res.render('medicineInfo', {pageTitle: 'Medicine Information - My Medication'});
-    }
-  },
-
   signup: function(req, res, next) {
     res.render('signup', {pageTitle: 'Sign up - My Medication', bodyId: 'signin'});
   }

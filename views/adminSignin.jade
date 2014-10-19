@@ -8,13 +8,13 @@ block body
         h3.text-center Sign in
         .row.adminWrap
             .col-xs-offset-3.col-xs-3.signin-box
-                form(role = 'form', method = 'post', action = '/adminSignin')
+                form(role = 'form', method = 'post', action = '/signin/admin')
                     .form-group
                         label.signin-note(for = 'username') Username
-                        input.form-control#username(type = 'username')
+                        input.form-control#username(type = 'username', name = 'username')
                     .form-group
                         label.signin-note(for = 'password') Password
-                        input.form-control#password(type = 'password')
+                        input.form-control#password(type = 'password', name = 'password')
                     .checkbox
                         label
                             input(type = 'checkbox')

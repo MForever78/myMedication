@@ -33,9 +33,11 @@ module.exports = function(app) {
   app.get('/personal_center', restrict, user.personalCenter);
   app.post('/signup$', signup);
   app.post('/signin/user', user.authPatient);
-  app.post('/addNewDrugSchedule', user.addNewDrug);
-  app.post('/deleteDrugSchedule', user.deleteDrug);
-  app.post('/addNewReminder', user.addNewReminder);
+  app.post('/signin/admin', admin.authDoctor);
+  app.post('/addNewDrugSchedule', restrict, user.addNewDrug);
+  app.post('/deleteDrugSchedule', restrict, user.deleteDrug);
+  app.post('/addNewReminder', restrict, user.addNewReminder);
+  // app.post('/addFeedback', restrict, user.addFeedback);
   app.get('/logout', user.logout);
   // Test 500
   app.get('/500', function(req, res, next) {

@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var Patients = require('../models/patients');
+var Doctors = require('../models/doctors');
 var pass = require('./pass');
 
 var createNewPatient = function(req, res, next) {
