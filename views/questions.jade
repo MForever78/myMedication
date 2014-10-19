@@ -1,0 +1,18 @@
+extends layouts/admin
+
+block content
+    h3 Questions
+    table.table.table-striped
+        thead
+            tr
+                th Name
+                th Content
+        tbody
+            each feed in feedback
+                tr
+                    td
+                        p= feed.name
+                        p= feed.email
+                    td
+                        p= feed.content
+                 

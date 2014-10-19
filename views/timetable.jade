@@ -7,14 +7,17 @@ block content
         |  My Medication Schedule
     table.table.table-bordered.table-hover
         - var take = { 'Morning': false, 'Noon': false, 'Evening': false };
-        - var days = 0;
+        - var week = { 'mon': false, 'tue': false, 'wed': false, 'thu': false, 'fri': false, 'sat': false, 'sun': false };
         each drug in patient.drugs
             - if (drug.reminder.timesADay >= 1)
                 - take.Morning = true;
             - if (drug.reminder.timesADay >= 2)
-                - take.Noon = true;
-            - if (drug.reminder.timesADay >= 3)
                 - take.Evening = true;
+            - if (drug.reminder.timesADay >= 3)
+                - take.Noon = true;
+            - for (var day in drug.reminder.duration)
+                - if (drug.reminder.duration[day])
+                    - week[day] = true;
         thead
             tr
                 th
@@ -28,22 +31,22 @@ block content
         tbody
             tr
                 th Morning
-                - for (i = 0; i < 7; i++)
-                    if take.Morning
+                each day in ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+                    if (take.Morning && week[day])
                         td.success Take Pill
                     else
                         td
             tr
                 th Noon
-                - for (i = 0; i < 7; i++)
-                    if (take.Noon)
+                each day in ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+                    if (take.Noon && week[day])
                         td.success Take Pill
                     else
                         td
             tr
                 th Evening
-                - for (i = 0; i < 7; i++)
-                    if (take.Evening)
+                each day in ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+                    if (take.Evening && week[day])
                         td.success Take Pill
                     else
                         td

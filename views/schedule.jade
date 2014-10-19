@@ -93,11 +93,29 @@ block content
                                 label Dose
                                 input.form-control(type = 'number', name = 'dose')
                             .form-group
-                                label Date started taking
-                                input.form-control(type = 'date', name = 'date')
-                            .form-group
                                 label Duration
-                                input.form-control(type = 'number', name = 'duration')
+                                .btn-group(data-toggle = 'buttons')
+                                    label.btn.btn-default
+                                        input(type = 'checkbox', name = 'monday')
+                                        | Mon
+                                    label.btn.btn-default
+                                        input(type = 'checkbox', name = 'tuesday')
+                                        | Tue
+                                    label.btn.btn-default
+                                        input(type = 'checkbox', name = 'wednesday')
+                                        | Wed
+                                    label.btn.btn-default
+                                        input(type = 'checkbox', name = 'thursday')
+                                        | Thu
+                                    label.btn.btn-default
+                                        input(type = 'checkbox', name = 'friday')
+                                        | Fri
+                                    label.btn.btn-default
+                                        input(type = 'checkbox', name = 'saturday')
+                                        | Sat
+                                    label.btn.btn-default
+                                        input(type = 'checkbox', name = 'sunday')
+                                        | Sun
                             .form-group
                                 input(name = '_id', style = 'display: none', value = drug._id, type = 'text')
                     .modal-footer

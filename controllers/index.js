@@ -25,6 +25,7 @@ module.exports = function(app) {
   app.get('/signup$', page.signup);
   app.get('/statistic', restrict, admin.statistic);
   app.get('/medicineinfo', restrict, admin.medicineInfo);
+  app.get('/questions', restrict, admin.questions);
   app.get('/schedule', restrict, user.schedule);
   app.get('/timetable', restrict, user.timetable);
   app.get('/appraisal', restrict, user.appraisal);
@@ -37,7 +38,9 @@ module.exports = function(app) {
   app.post('/addNewDrugSchedule', restrict, user.addNewDrug);
   app.post('/deleteDrugSchedule', restrict, user.deleteDrug);
   app.post('/addNewReminder', restrict, user.addNewReminder);
-  // app.post('/addFeedback', restrict, user.addFeedback);
+  app.post('/addFeedback', restrict, user.addFeedback);
+  app.post('/addNewRefill', restrict, user.addNewRefill);
+  app.post('/deleteRefill', restrict, user.deleteRefill);
   app.get('/logout', user.logout);
   // Test 500
   app.get('/500', function(req, res, next) {

@@ -4,6 +4,9 @@ block content
     h3
         span.glyphicon.glyphicon-pencil
         |  Feedback
+    if succeed
+        .alert.alert-success(role = 'alert')
+            | We have received your feedback. Thank you!
     form.form-horizontal(role = 'form', method = 'post', action = '/addFeedback')
         .form-group
             label.col-xs-2.control-label Name

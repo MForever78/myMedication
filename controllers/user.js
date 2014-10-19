@@ -1,5 +1,6 @@
 var auth = require('./auth');
 var Patients = require('../models/patients');
+var Feedback = require('../models/feedback');
 
 module.exports = {
   authPatient:
@@ -86,8 +87,15 @@ module.exports = {
           'added': true,
           'timesADay': req.body.timesADay,
           'dose': req.body.dose,
-          'duration': req.body.duration,
-          'date': new Date(req.body.date)
+          'duration': {
+            'mon': req.body.monday,
+            'tue': req.body.tuesday,
+            'wed': req.body.wednesday,
+            'thu': req.body.thursday,
+            'fri': req.body.friday,
+            'sat': req.body.saturday,
+            'sun': req.body.sunday
+          }
         };
 
         patient.drugs.id(req.body._id).reminder = newReminder;
@@ -102,6 +110,43 @@ module.exports = {
           res.redirect('/schedule');
         });
       });
+    },
+
+  addNewRefill:
+    function(req, res, next) {
+      Patients.findByIdAndUpdate(
+          req.session._id,
+          { $push: {
+              'refills': {
+                name: req.body.name,
+                tabletsADay: req.body.tabletsADay,
+                duration: req.body.duration,
+                total: req.body.total
+              }
+            } 
+          },
+          function(err, patient) {
+            console.log('Update succeed!');
+            console.log(patient);
+            res.redirect('/refill_prescription');
+          });
+    },
+  
+  deleteRefill:
+    function(req, res, next) {
+      Patients.findByIdAndUpdate(
+          req.session._id,
+          { $pull: {
+              'refills': {
+                _id: req.body._id
+              }
+            }
+          },
+          function(err, patient) {
+            console.log('Delete succeed!');
+            console.log(patient);
+            res.redirect('/refill_prescription');
+          });
     },
 
   timetable: function(req, res, next) {
@@ -144,9 +189,27 @@ module.exports = {
         return res.redirect('/signin/user');
       }
       console.log(patient);
-      res.render('feedback', {pageTitle: 'Feedback', bodyId: 'user', patient: patient});
+      var succeed = req.query.succeed === '1';
+      res.render('feedback', {pageTitle: 'Feedback', bodyId: 'user', patient: patient, succeed: succeed});
     });
   },       
+  
+  addFeedback: function(req, res, next) {
+    var feedback = new Feedback();
+    feedback.name = req.body.name;
+    feedback.phone = req.body.phone;
+    feedback.email = req.body.email;
+    feedback.content = req.body.content;
+    
+    feedback.save(function(err) {
+      if (err) {
+        console.log(err);
+        next(err);
+      }
+    });
+    
+    res.redirect('/feedback?succeed=1');
+  },
 
   personalCenter: function(req, res, next) {
     Patients.findById(req.session._id, function(err, patient) {

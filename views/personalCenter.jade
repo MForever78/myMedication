@@ -4,3 +4,16 @@ block content
     h3
         span.glyphicon.glyphicon-user
         |  Personal Center
+    table.table.table-striped.noBottom
+        thead
+            tr
+                th Drug Name
+                th Operate
+        tbody
+            each drug, index in patient.drugs
+                tr
+                    td= drug.name
+                    td
+                        form(method = 'post', action = '/deleteDrugSchedule')
+                            input(type = 'text', value = drug._id, name = '_id', style = 'display: none')
+                            input(type = 'submit', value = 'Delete')

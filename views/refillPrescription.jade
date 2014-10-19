@@ -4,61 +4,56 @@ block content
     h3 
         span.glyphicon.glyphicon-paperclip
         |  Refill Prescription
-    table.table.table-striped
+    table.table.table-striped.noBottom
         thead
             tr
                 th Drug Name
-                th
-                th Time
+                th Tablets a day
+                th Duration
+                th Total
+                th Days before refill
                 th Operate
         tbody
-            tr
-                td
-                    img(src = '/img/drug_demo.png')
-                td
-                    h4 Diltiazem
-                    p.
-                        Buy vanilla through security check of the product is genuine. Whey protein should be instant online comments in warm water, use of the product containing soy protein and protein powder do comparison. The product dissolves significantly faster and without agglomeration. Very good, ready to immediately...
-                td 2014-05-01
-                td
-                    a(href = '#') Delete
-            tr
-                td
-                    img(src = '/img/drug_demo.png')
-                td
-                    h4 Diltiazem
-                    p.
-                        Buy vanilla through security check of the product is genuine. Whey protein should be instant online comments in warm water, use of the product containing soy protein and protein powder do comparison. The product dissolves significantly faster and without agglomeration. Very good, ready to immediately...
-                td 2014-05-01
-                td
-                    a(href = '#') Delete
-            tr
-                td
-                    img(src = '/img/drug_demo.png')
-                td
-                    h4 Diltiazem
-                    p.
-                        Buy vanilla through security check of the product is genuine. Whey protein should be instant online comments in warm water, use of the product containing soy protein and protein powder do comparison. The product dissolves significantly faster and without agglomeration. Very good, ready to immediately...
-                td 2014-05-01
-                td
-                    a(href = '#') Delete
-            tr
-                td
-                    img(src = '/img/drug_demo.png')
-                td
-                    h4 Diltiazem
-                    p.
-                        Buy vanilla through security check of the product is genuine. Whey protein should be instant online comments in warm water, use of the product containing soy protein and protein powder do comparison. The product dissolves significantly faster and without agglomeration. Very good, ready to immediately...
-                td 2014-05-01
-                td
-                    a(href = '#') Delete
-            tr
-                td
-                    img(src = '/img/drug_demo.png')
-                td
-                    h4 Diltiazem
-                    p.
-                        Buy vanilla through security check of the product is genuine. Whey protein should be instant online comments in warm water, use of the product containing soy protein and protein powder do comparison. The product dissolves significantly faster and without agglomeration. Very good, ready to immediately...
-                td 2014-05-01
-                td
-                    a(href = '#') Delete
+            each refill, index in patient.refills
+                tr
+                    td= refill.name
+                    td= refill.tabletsADay
+                    td= refill.duration
+                    td= refill.total
+                    td= (refill.duration * refill.tabletsADay - refill.total) / refill.tabletsADay
+                    td
+                        form(method = 'post', action = '/deleteRefill')
+                            input(type = 'text', value = refill._id, name = '_id', style = 'display: none')
+                            input(type = 'submit', value = 'Delete')
+    .addNewDrug.clearfix
+        ul.list-unstyled.pull-right
+            li
+                a(href = '#addNewDrug', data-toggle = 'modal')
+                    span.glyphicon.glyphicon-plus
+                    |  Add a new drug
+
+    #addNewDrug.modal.fade(tabindex = '-1', role = 'dialog', aria-labelledby = 'newDrugLabel', aria-hidden = 'true')
+        .modal-dialog.patient-modal
+            .modal-content
+                .modal-header
+                    button.close(type = 'button', data-dismiss = 'modal')
+                        span(aria-hidden = 'true') &times;
+                        span.sr-only Close
+                    h4#newDrugLabel.modal-title.text-uppercase.text-center Add a new drug
+                .modal-body
+                    form#newDrug(role = 'form', method = 'post', action = '/addNewRefill')
+                        .form-group
+                            label(for = 'inputName') Drug Name
+                            input#inputDrugName.form-control(type = 'text', name = 'name')
+                        .form-group
+                            label(for = 'inputTabletsADay') Tablets a day
+                            input#inputTabletsADay.form-control(name = 'tabletsADay', type = 'number')
+                        .form-group
+                            label(for = 'inputDuration') Duration
+                            input#inputDuration.form-control(name = 'duration', type = 'number')
+                        .form-group
+                            label(for = 'inputTotal') Total
+                            input#inputTotal.form-control(type = 'number', name = 'total')
+                .modal-footer
+                    button.btn.btn-default(type = 'button', data-dismiss = 'modal') Close
+                    button#submitNewDrug.btn.btn-primary Save

@@ -1,5 +1,6 @@
 var auth = require('./auth');
 var Doctors = require('../models/doctors');
+var Feedback = require('../models/feedback');
 
 module.exports = {
   authDoctor: 
@@ -19,10 +20,16 @@ module.exports = {
     },
 
   statistic: function(req, res, next) {
-    res.render('statistic', {pageTitle: 'Administrator - My Medication', bodyId: 'user'});
+    res.render('statistic', {pageTitle: 'Statistic - My Medication', bodyId: 'user'});
   },
 
   medicineInfo: function(req, res, next) {
     res.render('medicineInfo', {pageTitle: 'Medicine Information - My Medication', bodyId: 'user'});
+  },
+
+  questions: function(req, res, next) {
+    Feedback.find({}, function(err, feedback) {
+      res.render('questions', {pageTitle: 'Questions', bodyId: 'user', feedback: feedback});
+    });
   }
 }
