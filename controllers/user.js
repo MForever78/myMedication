@@ -116,15 +116,46 @@ module.exports = {
   },
 
   appraisal: function(req, res, next) {
-    res.render('appraisal', {pageTitle: 'My Appraisal', bodyId: 'user'});
+    Patients.findById(req.session._id, function(err, patient) {
+      if (err) {
+        console.log(err);
+        return res.redirect('/signin/user');
+      }
+      console.log(patient);
+      res.render('appraisal', {pageTitle: 'My Appraisal', bodyId: 'user', patient: patient});
+    });
   },
+
   refillPrescription: function(req, res, next) {
-    res.render('refillPrescription', {pageTitle: 'Refill Prescription', bodyId: 'user'});
+    Patients.findById(req.session._id, function(err, patient) {
+      if (err) {
+        console.log(err);
+        return res.redirect('/signin/user');
+      }
+      console.log(patient);
+      res.render('refillPrescription', {pageTitle: 'Refill Prescription', bodyId: 'user', patient: patient});
+    });
   },
+  
   feedback: function(req, res, next) {
-    res.render('feedback', {pageTitle: 'Feedback', bodyId: 'user'});
+    Patients.findById(req.session._id, function(err, patient) {
+      if (err) {
+        console.log(err);
+        return res.redirect('/signin/user');
+      }
+      console.log(patient);
+      res.render('feedback', {pageTitle: 'Feedback', bodyId: 'user', patient: patient});
+    });
   }, 
+
   personalCenter: function(req, res, next) {
-    res.render('personalCenter', {pageTitle: 'Personal Center', bodyId: 'user'});
+    Patients.findById(req.session._id, function(err, patient) {
+      if (err) {
+        console.log(err);
+        return res.redirect('/signin/user');
+      }
+      console.log(patient);
+      res.render('personalCenter', {pageTitle: 'Personal Center', bodyId: 'user', patient: patient});
+    });
   }
 }

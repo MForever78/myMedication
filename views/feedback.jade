@@ -4,3 +4,21 @@ block content
     h3
         span.glyphicon.glyphicon-pencil
         |  Feedback
+    form.form-horizontal(role = 'form', method = 'post', action = '/addFeedback')
+        .form-group
+            label.col-xs-2.control-label Name
+            .col-xs-10
+                input.form-control(type = 'text', name = 'name')
+        .form-group
+            label.col-xs-2.control-label Phone Number
+            .col-xs-10
+                input.form-control(type = 'text', name = 'number')
+        .form-group
+            label.col-xs-2.control-label Email
+            .col-xs-10
+                input.form-control(type = 'email', name = 'email')
+        .form-group
+            label.col-xs-2.control-label Content
+            .col-xs-10
+                textarea.form-control(rows = '10', name = 'content')
+        button.btn.btn-primary.pull-right(type = 'submit') Submit
