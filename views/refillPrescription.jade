@@ -23,7 +23,11 @@ block content
                     if (refill.total >= refill.duration * refill.tabletsADay)
                         td No need to refill
                     else
-                        td= Math.floor((refill.total / refill.tabletsADay))
+                        - var day = Math.floor(refill.total / refill.tabletsADay)
+                        if (day <= 1)
+                            td #{day} (Please refill your prescription today!)
+                        else
+                            td= day
                     td
                         form(method = 'post', action = '/deleteRefill')
                             input(type = 'text', value = refill._id, name = '_id', style = 'display: none')
