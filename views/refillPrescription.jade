@@ -23,7 +23,7 @@ block content
                     if (refill.total >= refill.duration * refill.tabletsADay)
                         td No need to refill
                     else
-                        td= Math.floor((refill.duration * refill.tabletsADay - refill.total) / refill.tabletsADay)
+                        td= Math.floor((refill.total / refill.tabletsADay))
                     td
                         form(method = 'post', action = '/deleteRefill')
                             input(type = 'text', value = refill._id, name = '_id', style = 'display: none')
