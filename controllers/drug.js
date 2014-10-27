@@ -1,4 +1,5 @@
 var Drugs = require('../models/drugs');
+var marked = require('marked');
 
 function getDetail(req, res, next) {
   var name = req.query.name;
@@ -10,7 +11,9 @@ function getDetail(req, res, next) {
         next(err);
       }
       console.log(drug);
-      res.render('pillDetail', { pageTitle: 'Detail', bodyId: 'user', drug: drug });
+      marked(drug.description, function(err, description) {
+        res.render('pillDetail', { pageTitle: 'Detail', bodyId: 'user', drug: drug, description: description });
+      });
     }
   );
 }

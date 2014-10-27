@@ -17,7 +17,7 @@ block body
     .container-fluid.pill
         .container
             h3 #{drug.name}
-            section #{drug.description}
+            div!= description
             h3 User Evaluation
             #disqus_thread
             script(type = 'text/javascript').
