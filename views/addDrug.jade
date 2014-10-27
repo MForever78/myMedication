@@ -1,10 +1,14 @@
-form(role = 'form', method = 'post', action = '/addDrug')
-    label Drug Name
-        input(type = 'text', name = 'name', required)
-    label Description
-        textarea(rows = '10', name = 'description', required)
-    label chemical
-        input(type = 'text', name = 'chemical', required)
-    input(type = 'submit')
+extends layouts/admin
+
+block content
+
+    form(role = 'form', method = 'post', action = '/addDrug')
+        label Drug Name
+            input(type = 'text', name = 'name', required)
+        label Description
+            textarea(rows = '10', name = 'description', required)
+        label chemical
+            input(type = 'text', name = 'chemical', required)
+        input(type = 'submit')
 
 
