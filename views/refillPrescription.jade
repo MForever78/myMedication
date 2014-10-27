@@ -24,8 +24,8 @@ block content
                         td No need to refill
                     else
                         - var day = Math.floor(refill.total / refill.tabletsADay)
-                        if (day <= 1)
-                            td #{day} (Please refill your prescription today!)
+                        if (day <= 7)
+                            td #{day} (Please refill your prescription!)
                         else
                             td= day
                     td
