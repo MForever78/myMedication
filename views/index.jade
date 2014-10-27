@@ -29,10 +29,10 @@ block body
                     h1 Medication Management
                     h1.strong Information System
             #index-search
-                form.form-inline(role = 'form')
+                form.form-inline(role = 'form', method = 'get', action = '/query')
                     .form-group.has-feedback
                         label.sr-only(for = 'searchBox') Search box
-                        input.form-control#searchBox(type = 'text', placeholder = 'Search by medicine name or condition...')
+                        input.form-control#searchBox(type = 'text', name = 'search', placeholder = 'Search by medicine name or condition...')
                         span.glyphicon.glyphicon-search.form-control-feedback
                     button.btn.btn-primary Search
     

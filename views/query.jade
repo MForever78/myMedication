@@ -1,0 +1,33 @@
+extends layouts/main
+
+block body
+    nav.navbar.navbar-inverse.navbar-fixed-top(role = 'navigation')
+        .container
+            .navbar-header
+                a.nav-logo(href = '/')
+            .collapse.navbar-collapse
+                ul.nav.navbar-nav.navbar-right
+                    li.active
+                        a(href = '/') Home
+                    li
+                        a(href = '/about') About
+                    li
+                        a(href = '/contact') Contact
+                    li
+                        a(href = '/categories') Categories
+
+    .container-fluid.queryResult
+        .container
+            h3 Search Results for #{search}
+            p.small #{pills.length} results were found
+
+            each pill in pills
+                .pillBox
+                    .pillContent
+                        img(src = pill.img, style = 'width: 150px; height: 150px')
+                        h4 #{pill.name}
+                        p #{pill.description}
+                    .pillDetail
+                        a.btn.btn-primary(href = '/pillDetail?name=' + pill.name) DETAILS
+
+    include includes/footer
