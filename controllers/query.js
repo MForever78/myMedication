@@ -6,7 +6,7 @@ function query(req, res, next) {
     
     Drugs.find(
       {
-        $or: [{ name: reg }, { conditions: reg }]
+        $or: [{ name: reg }, { chemical: reg }]
       },
       function(err, docs) {
         if (err) {

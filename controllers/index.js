@@ -35,7 +35,9 @@ module.exports = function(app) {
   app.get('/feedback', restrict, user.feedback);
   app.get('/personal_center', restrict, user.personalCenter);
   app.get('/query', query);
-  app.get('/pillDetail', drug);
+  app.get('/pillDetail', drug.query);
+  app.get('/addDrug', page.addDrug);
+  app.post('/addDrug', drug.add);
   app.post('/signup$', signup);
   app.post('/signin/user', user.authPatient);
   app.post('/signin/admin', admin.authDoctor);

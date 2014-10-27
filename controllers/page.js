@@ -29,5 +29,8 @@ module.exports = {
     res.render('signup', {pageTitle: 'Sign up - My Medication', bodyId: 'signin'});
   },
 
+  addDrug: function(req, res, next) {
+    res.render('addDrug', {pageTitle: 'Add new drug'});
+  }
 
 }

@@ -24,7 +24,7 @@ block body
                     .pillContent
                         img(src = pill.img, style = 'width: 150px; height: 150px')
                         h4 #{pill.name}
-                        p #{pill.description}
+                        p #{pill.description.slice(0, 60)}
                     .pillDetail
                         a.btn.btn-primary(href = '/pillDetail?name=' + pill.name) DETAILS
 
