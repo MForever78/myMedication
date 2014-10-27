@@ -3,6 +3,7 @@ var admin = require('./admin');
 var signup = require('./signup');
 var page = require('./page');
 var query = require('./query');
+var drug = require('./drug');
 
 function restrict(req, res, next) {
   if (req.session._id) {
@@ -34,6 +35,7 @@ module.exports = function(app) {
   app.get('/feedback', restrict, user.feedback);
   app.get('/personal_center', restrict, user.personalCenter);
   app.get('/query', query);
+  app.get('/pillDetail', drug);
   app.post('/signup$', signup);
   app.post('/signin/user', user.authPatient);
   app.post('/signin/admin', admin.authDoctor);

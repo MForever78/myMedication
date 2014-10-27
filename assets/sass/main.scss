@@ -312,12 +312,13 @@ footer {
     }
 }
 
-.queryResult {
+.queryResult, .pill {
     background-color: #f5f5f5;
     
     h3 {
         border-bottom: 1px dotted #cdcdcd;
         padding: 15px 0;
+        margin-bottom: 30px;
     }
 }
 
