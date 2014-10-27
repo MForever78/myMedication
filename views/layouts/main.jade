@@ -26,9 +26,11 @@ html
         if showTests
             link(rel = "stylesheet", href = "/vendor/mocha.css")
         // stylesheets
+        link(rel = 'stylesheet', href = '/styles/jquery-ui.min.css')
         link(rel = "stylesheet", href = "/styles/main.min.css")
         // jQuery (For some certain reason, jQuery must be loaded before <body>)
         script(src = "/libs/jquery.min.js")
+        script(src = "/libs/jquery-ui.min.js")
     
     body(id = bodyId)
         block body
