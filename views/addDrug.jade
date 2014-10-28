@@ -1,14 +1,21 @@
 extends layouts/admin
 
 block content
-
+    h3 Add new drug
     form(role = 'form', method = 'post', action = '/addDrug')
-        label Drug Name
-            input(type = 'text', name = 'name', required)
-        label Description
-            textarea(rows = '10', name = 'description', required)
-        label chemical
-            input(type = 'text', name = 'chemical', required)
-        input(type = 'submit')
+        .form-group
+            label Drug Name
+            input.form-control(type = 'text', name = 'name', required)
+        .form-group
+            label Description
+            textarea#description.form-control(rows = '10', name = 'description', required)
+        .form-group
+            label Chemical
+            input.form-control(type = 'text', name = 'chemical', required)
+        input.btn.btn-primary(type = 'submit', value = 'Submit')
 
+prepend scripts
+    script(type = 'text/javascript', src = '/libs/module.min.js')
+    script(type = 'text/javascript', src = '/libs/uploader.min.js')
+    script(type = 'text/javascript', src = '/libs/simditor.min.js')
 

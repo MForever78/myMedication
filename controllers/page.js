@@ -30,7 +30,7 @@ module.exports = {
   },
 
   addDrug: function(req, res, next) {
-    res.render('addDrug', {pageTitle: 'Add new drug'});
+    res.render('addDrug', {pageTitle: 'Add new drug', bodyId: 'user'});
   }
 
 }

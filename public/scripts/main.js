@@ -20,3 +20,7 @@ $( "#searchBox" ).autocomplete({
           }) );
       }
 });
+
+var editor = new Simditor({
+  textarea: $('#description')
+});

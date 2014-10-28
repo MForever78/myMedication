@@ -26,8 +26,10 @@ html
         if showTests
             link(rel = "stylesheet", href = "/vendor/mocha.css")
         // stylesheets
+        link(rel = 'stylesheet', href = '/styles/font-awesome.css')
+        link(rel = 'stylesheet', href = '/styles/simditor.css')
         link(rel = 'stylesheet', href = '/styles/jquery-ui.min.css')
-        link(rel = "stylesheet", href = "/styles/main.min.css")
+        link(rel = 'stylesheet', href = '/styles/main.min.css')
         // jQuery (For some certain reason, jQuery must be loaded before <body>)
         script(src = "/libs/jquery.min.js")
         script(src = "/libs/jquery-ui.min.js")
@@ -45,5 +47,6 @@ html
             if pageTestScript
                 script(src = "#{pageTestScript}")
             script mocha.run();
-        script(src = "/libs/bootstrap.min.js")
-        script(src = "/scripts/main.min.js")
+        block scripts
+          script(src = "/libs/bootstrap.min.js")
+          script(src = "/scripts/main.min.js")
